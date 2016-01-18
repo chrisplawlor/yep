@@ -102,8 +102,7 @@ if (!isset($_POST['submit'])) {
 				VALUES ('{$username}', '{$password}', '{$c_password}', '{$first_name}', '{$last_name}', '{$email}')";
  
 		if ($mysqli->query($sql)) {
-			//echo "New Record has id ".$mysqli->insert_id;
-			echo "<p>Registred successfully!</p>"; //redirect to success page
+			header('Location: register_success.php');
 		} else {
 			echo "<p>MySQL error no {$mysqli->errno} : {$mysqli->error}</p>";
 			exit();

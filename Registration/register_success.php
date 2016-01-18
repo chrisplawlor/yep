@@ -12,7 +12,7 @@
             <meta name="apple-mobile-web-app-capable" content="yes">
             <meta name="apple-mobile-web-app-status-bar-style" content="black">
             <meta name="mobile-web-app-capable" content="yes">
-            <link type = "text/css" href ="login.css" rel = "stylesheet">
+            <link type = "text/css" href ="register_success.css" rel = "stylesheet">
             <link rel="apple-touch-icon" href="logo.jpg" />
             <link rel="apple-touch-icon-precomposed" href="logo.png" />
             <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
@@ -42,8 +42,9 @@ window.addEventListener("orientationchange",function(){hideAddressBar();});
             <?php
 if (!isset($_POST['submit'])){
 ?>
+<h4>Your registration was successful! <br></h4>
+<h5> Now you can log in:</h5>
 
-<h4> Log in </h4>
 
 <div id="form" class="form" >
 
@@ -73,8 +74,9 @@ if (!isset($_POST['submit'])){
 	$result = $mysqli->query($sql);
 	if (!$result->num_rows == 1) {
 		echo "<p>Invalid username or password</p>";
+		
 	} else {
-		header('location: ../Home/home.php');
+		header('Location: ../Home/home.php');
 	}
 }
 ?>	
