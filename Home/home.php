@@ -67,8 +67,8 @@ header ("Location: ../Welcome/welcome.php");
                 
                 <body>
             <div id="search" class="page-content">
-           <h3>Home</h3>
-           
+           <h3>Youth Employment App</h3>
+          <img src="../Images/Untitled.png"  style="width:160px;height:100px;position:center;">
            <p1> Welcome, </p1>
            <p2> 
            <?php

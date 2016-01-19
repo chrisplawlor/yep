@@ -67,8 +67,7 @@ header ("Location: ../Welcome/welcome.php");
                 
                 <body>
             <div id="search" class="page-content">
-            <br><br><br>
-            
+			<h3>Interview Tips</h3>            
             
         
          </div>

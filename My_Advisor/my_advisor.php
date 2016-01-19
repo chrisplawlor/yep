@@ -67,8 +67,7 @@ header ("Location: ../Welcome/welcome.php");
                 
                 <body>
             <div id="search" class="page-content">
-            <br><br><br>
-            
+			<h3>My Advisor</h3>            
             
         
          </div>

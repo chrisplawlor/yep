@@ -30,21 +30,26 @@
             
 	<h3>Youth Employment App</h3>
     <h4>Making employment more simple</h4>
-    <br>
-    <br>
+    
 
     
-    <div style="position: relative; left: 13%;"> 
-<img src="../Images/fb_login.png" style="width:252.5px;height:53.1px;">
+    <div style="position: relative; top:2.5%; left: 13%;"> 
+<img src="../Images/fb_button.png" style="width:252.5px;height:53.1px;">
 </div>
 <br>
-    <div style="position: relative; left: 13%;"> 
-<a href="../Login/login.php"> <img src="../Images/login_button.png">
+    <div style="position: relative; top:2.5%; left: 13%;"> 
+<a href="../Login/login.php"> <img src="../Images/login_button.png" style="width:252.5px;height:53.1px;">
 </div>
 <br>
- <div style="position: relative; left: 13%;"> 
-<a href="../Registration/registration.php"> <img src="../Images/register_button.png"> </a>
+ <div style="position: relative; top:2.5%; left: 13%;"> 
+<a href="../Registration/registration.php"> <img src="../Images/register_button.png" style="width:252.5px;height:53.1px;">
+</div>  
+<br>  
+
+ <div style="position: relative; top:2.5%; left: 13%;"> 
+<a href="../Login/advisor_login.php"> <img src="../Images/advisor_button.png" style="width:252.5px;height:53.1px;"> </a>
 </div>        
+    
 <br><br> <br> <br><br> <br> <br> <br> <br> <br> <br>
         
          </div>

@@ -2,7 +2,7 @@
 
 session_start();
 
-if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+if (!(isset($_SESSION['advisor_login']) && $_SESSION['advisor_login'] != '')) {
 
 //Takes user back to login page as they are not logged in
 header ("Location: ../Welcome/welcome.php");
@@ -20,7 +20,7 @@ header ("Location: ../Welcome/welcome.php");
             <meta name="apple-mobile-web-app-capable" content="yes">
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
             <meta name="mobile-web-app-capable" content="yes">
-            <link type = "text/css" href ="cl_tips.css" rel = "stylesheet" >
+            <link type = "text/css" href ="advisor_home.css" rel = "stylesheet" >
             <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 <link rel="icon" href="../Images/Icon.png">
 <link rel="apple-touch-icon"  href="../Images/Icon.png">
@@ -36,38 +36,28 @@ header ("Location: ../Welcome/welcome.php");
             <label for="sidebartoggler" class ="toggle" >☰</label> 
              <div class="sidebar">
              
-            <ul>          
-            <li><a href="../Home/home.php">HOME</a></li>
-            
-			<li><a href="#">PREPARATION</a>
-			<ul>
-			<li><a href="../CV_Tips/cv_tips.php">> CV TIPS</a></li>
-			<li><a href="#" class="active">> COVER LETTER TIPS</a></li>
-			<li><a href="../Interview_Tips/interview_tips.php">> INTERVIEW TIPS</a></li>
-			</ul>
-			</li>
-			
-			<li><a href="#">AT WORK</a>
-			<ul>
-			<li><a href="../Cheques/cheques.php">> CHEQUES</a></li>
-			<li><a href="../Tax/tax.php">> TAX</a></li>
-			</ul>
-			</li>
-			
-			<li><a href="../My_Advisor/my_advisor.php">MY ADVISOR</a></li>
-			<li><a href="../Jobs/jobs.php">JOBS</a></li>
-			<li><a href="../Diary/diary.php"> DIARY</a></li>
-			<li><a href="../My_Preferences/my_preferences.php">SETTINGS</a></li>
+			<ul>          
+			<li><a href="#" class="active">HOME</a></li>
+			<li><a href="../My_Users/my_users.php">MY USERS</a></li>
+			<li><a href="../Jobs/advisor_jobs.php">JOBS</a></li>
 			<li><a href="../Log Out/logout.php">LOG OUT</a></li>
-			
-                    </ul>
+            </ul>
                 
                     
                 </div>
                 
                 <body>
             <div id="search" class="page-content">
-			<h3>Cover Letter Tips</h3>            
+           <h3>Youth Employment App</h3>
+          <img src="../Images/Untitled.png"  style="width:160px;height:100px;position:center;">
+           <p1> Welcome, </p1>
+           <p2> 
+           <?php
+        
+           echo $_SESSION['username']; 
+           ?>
+           </p2>
+            
             
         
          </div>

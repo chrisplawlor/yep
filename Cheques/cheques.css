@@ -20,7 +20,7 @@ body {
     margin-left:0;
     z-index: 0;
     margin: 0%;
-    margin-top: 2.3em; 
+    margin-top: 16%; 
     transition: all .3s ease-out 0; 
     width:100%;
     height:100%;
@@ -36,6 +36,27 @@ body {
 .page-content h2{
     margin-bottom: 1.8em;
 }
+
+.page-content h3{
+    margin-top: 2em;
+}
+
+.page-content p1{
+margin-top: 1em;
+margin-left: 5%;
+    margin-bottom: 1em;
+    color: #fff;
+    font-size:2em;
+    }
+    
+.page-content p2{
+margin-top: 1em;
+    margin-bottom: 1em;
+    color: #000;
+    font-size:2em;
+    }
+    
+    
 
 .page-content #search-labels{
     color: #ff9933;
@@ -175,7 +196,7 @@ padding:20px;
 }
 
 h3 {
- margin-top: 5%;
+ margin-top: 7%;
     margin-bottom: 0.5em;
     text-align: center;
     color: #fff;
