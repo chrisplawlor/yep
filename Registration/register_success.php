@@ -73,10 +73,13 @@ if (!isset($_POST['submit'])){
 	$sql = "SELECT * from user WHERE username LIKE '{$username}' AND password LIKE '{$password}' LIMIT 1";
 	$result = $mysqli->query($sql);
 	if (!$result->num_rows == 1) {
+		session_start();
+		$_SESSION['login'] = '';
 		echo "<p>Invalid username or password</p>";
-		
 	} else {
-		header('Location: ../Home/home.php');
+		session_start();
+		$_SESSION['login'] = "1";
+		header('location: ../Home/home.php');
 	}
 }
 ?>	

@@ -20,7 +20,7 @@ header ("Location: ../Welcome/welcome.php");
             <meta name="apple-mobile-web-app-capable" content="yes">
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
             <meta name="mobile-web-app-capable" content="yes">
-            <link type = "text/css" href ="home.css" rel = "stylesheet" >
+            <link type = "text/css" href ="cl_tips.css" rel = "stylesheet" >
             <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 <link rel="icon" href="../Images/Icon.png">
 <link rel="apple-touch-icon"  href="../Images/Icon.png">
@@ -37,12 +37,12 @@ header ("Location: ../Welcome/welcome.php");
              <div class="sidebar">
              
             <ul>          
-            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="../Home/home.php">HOME</a></li>
             
 			<li><a href="#">PREPARATION</a>
 			<ul>
 			<li><a href="../CV_Tips/cv_tips.php">> CV TIPS</a></li>
-			<li><a href="../CL_Tips/cl_tips.php">> COVER LETTER TIPS</a></li>
+			<li><a href="#" class="active">> COVER LETTER TIPS</a></li>
 			<li><a href="../Interview_Tips/interview_tips.php">> INTERVIEW TIPS</a></li>
 			</ul>
 			</li>
@@ -67,15 +67,7 @@ header ("Location: ../Welcome/welcome.php");
                 
                 <body>
             <div id="search" class="page-content">
-           <h3>Home</h3>
-           
-           <p1> Welcome, </p1>
-           <p2> 
-           <?php
-        
-           echo $_SESSION['username']; 
-           ?>
-           </p2>
+            <br><br><br>
             
             
         

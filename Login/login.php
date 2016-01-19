@@ -68,12 +68,19 @@ if (!isset($_POST['submit'])){
  
 	$username = $_POST['username'];
 	$password = $_POST['password'];
- 
+	
 	$sql = "SELECT * from user WHERE username LIKE '{$username}' AND password LIKE '{$password}' LIMIT 1";
 	$result = $mysqli->query($sql);
 	if (!$result->num_rows == 1) {
+		session_start();
+		$_SESSION['login'] = '';
 		echo "<p>Invalid username or password</p>";
 	} else {
+		session_start();
+		$_SESSION['login'] = "1";
+		$_SESSION['username'] = $username;
+
+
 		header('location: ../Home/home.php');
 	}
 }

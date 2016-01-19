@@ -20,7 +20,7 @@ header ("Location: ../Welcome/welcome.php");
             <meta name="apple-mobile-web-app-capable" content="yes">
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
             <meta name="mobile-web-app-capable" content="yes">
-            <link type = "text/css" href ="home.css" rel = "stylesheet" >
+            <link type = "text/css" href ="diary.css" rel = "stylesheet" >
             <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 <link rel="icon" href="../Images/Icon.png">
 <link rel="apple-touch-icon"  href="../Images/Icon.png">
@@ -37,7 +37,7 @@ header ("Location: ../Welcome/welcome.php");
              <div class="sidebar">
              
             <ul>          
-            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="../Home/home.php">HOME</a></li>
             
 			<li><a href="#">PREPARATION</a>
 			<ul>
@@ -56,7 +56,7 @@ header ("Location: ../Welcome/welcome.php");
 			
 			<li><a href="../My_Advisor/my_advisor.php">MY ADVISOR</a></li>
 			<li><a href="../Jobs/jobs.php">JOBS</a></li>
-			<li><a href="../Diary/diary.php"> DIARY</a></li>
+			<li><a href="#" class="active"> DIARY</a></li>
 			<li><a href="../My_Preferences/my_preferences.php">SETTINGS</a></li>
 			<li><a href="../Log Out/logout.php">LOG OUT</a></li>
 			
@@ -67,15 +67,7 @@ header ("Location: ../Welcome/welcome.php");
                 
                 <body>
             <div id="search" class="page-content">
-           <h3>Home</h3>
-           
-           <p1> Welcome, </p1>
-           <p2> 
-           <?php
-        
-           echo $_SESSION['username']; 
-           ?>
-           </p2>
+            <br><br><br>
             
             
         

@@ -4,4 +4,5 @@
 	const DB_USER = 'pkb12170';
 	const DB_PASS = 'couslyti';
 	const DB_NAME = 'pkb12170';
+	
 ?>
