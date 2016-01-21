@@ -55,8 +55,9 @@ header ("Location: ../Welcome/welcome.php");
 			</li>
 			
 			<li><a href="../My_Advisor/my_advisor.php">MY ADVISOR</a></li>
-			<li><a href="../Jobs/jobs.php">JOBS</a></li>
-			<li><a href="../Diary/diary.php"> DIARY</a></li>
+			<li><a href="../Jobs/jobs.php">JOB MATCHES</a></li>
+			<li><a href="../Jobs/search_jobs.php">SEARCH JOBS</a></li>
+			<li><a href="../Diary/diary.php"> MY DIARY</a></li>
 			<li><a href="../My_Preferences/my_preferences.php">SETTINGS</a></li>
 			<li><a href="../Log Out/logout.php">LOG OUT</a></li>
 			

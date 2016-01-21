@@ -175,7 +175,7 @@ if (!isset($_POST['submit'])) {
 		if ($mysqli->query($sql)) {
 			//header('Location: register_success.php');
 			
-			echo "Job added!";
+			header('Location: ../Jobs/advisor_jobs.php');
 		} else {
 			echo "<p>MySQL error no {$mysqli->errno} : {$mysqli->error}</p>";
 			exit();

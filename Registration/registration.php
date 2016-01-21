@@ -57,6 +57,8 @@ if (!isset($_POST['submit'])) {
 		Password: <input type="password" name="password" /><br />
 		Confirm Password: <input type="password" name="c_password" /><br />
 		Email: <input type="email" name="email" /><br />
+		Advisor Id:* <input type="text" name="advisor" /><br />
+		*Leave blank to be assigned an advisor
  
 		<input type="submit" name="submit" value="Register" />
 	</form>

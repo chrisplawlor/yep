@@ -55,8 +55,9 @@ header ("Location: ../Welcome/welcome.php");
 			</li>
 			
 			<li><a href="../My_Advisor/my_advisor.php">MY ADVISOR</a></li>
-			<li><a href="../Jobs/jobs.php">JOBS</a></li>
-			<li><a href="#" class="active"> DIARY</a></li>
+			<li><a href="../Jobs/jobs.php">JOB MATCHES</a></li>
+			<li><a href="../Jobs/search_jobs.php">SEARCH JOBS</a></li>
+			<li><a href="#" class="active"> MY DIARY</a></li>
 			<li><a href="../My_Preferences/my_preferences.php">SETTINGS</a></li>
 			<li><a href="../Log Out/logout.php">LOG OUT</a></li>
 			
@@ -67,7 +68,7 @@ header ("Location: ../Welcome/welcome.php");
                 
                 <body>
             <div id="search" class="page-content">
-			<h3>Diary</h3>            
+			<h3>My Diary</h3>            
             
         
          </div>

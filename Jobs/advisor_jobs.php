@@ -49,10 +49,70 @@ header ("Location: ../Welcome/welcome.php");
                 
                 <body>
             <div id="search" class="page-content">
-			<h3>Jobs</h3>            
             <a href="../Add_Job/add_job.php">
-  <img src="../Images/add.png" style="width:42px;height:42px;border:0;">
+            <br>
+  <img src="../Images/button-21.png" style="position: relative; top:2.5%; bottom:5%;left: 5%; right:5%; width:90%;height:39%;">
+  </a>
+   <br><br>
+     <a href="../Search_Jobs/advisor_search_jobs.php">
+
+   <img src="../Images/button-23.png" style="position: relative; top:5%; left: 5%; right:5%; width:90%;height:39%;">
+  
 </a>
+
+
+<script>
+//script for the job box are in the while loop
+
+$(".jobBox").click(function() {
+  window.location = $(this).find("a").attr("href"); 
+  return false;
+});
+
+
+</script>
+
+            <div  class="page-content-2">
+
+     <h3>     <img src="../Images/recent.png" style="position: relative; top:5%; right:5%; left:0%; width:100%;height:8%;"> </h3>
+
+        <?php
+    //    require_once("../mysql_details.php");
+	//$connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+	$connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti");
+	mysql_select_db("pkb12170",$connection);
+	$sql = "SELECT * FROM job ORDER BY job_id DESC LIMIT 0,4";
+	$myData = mysql_query($sql, $connection);
+
+
+	$counter = 0;
+	while($record = mysql_fetch_array($myData)) {
+	//reverse array (descending order)
+	$data = array_reverse($record);
+	?>
+	<div class="jobBox">
+	
+	 <a href="job_overview.php"></a>
+	 
+	<hr>
+	<h4> <?php echo $data['job_title']; ?></h4>
+	
+	
+	<h6><?php echo nl2br (" Location: ");?>
+	<?php echo $data['location'];?></h6>
+	<h6> <?php echo nl2br ("\n Salary: ")?>
+	<?php echo $data['salary'];?></h6>
+	<h6> <?php echo nl2br ("\n Job Type: ");?>
+	 <?php echo $data['job_type'];?></h6><?php
+	}
+		
+
+	mysql_close($connection);
+	
+        
+        ?>
+        <hr>
+        </div>
         
          </div>
     </body>
