@@ -28,45 +28,11 @@ header ("Location: ../Welcome/welcome.php");
 
    </head>
 
-   
-        <input type="checkbox"  id="sidebartoggler" name ="" value=""> 
-        
+           
         <div class="page-wrap">
-            <div class ="headbar">  <h1>YeP</h1> </div>
-            <label for="sidebartoggler" class ="toggle" >☰</label> 
-             <div class="sidebar">
-             
-            <ul>          
-            <li><a href="../Home/home.php">HOME</a></li>
             
-			<li><a href="#">PREPARATION</a>
-			<ul>
-			<li><a href="../CV_Tips/cv_tips.php">> CV TIPS</a></li>
-			<li><a href="../CL_Tips/cl_tips.php">> COVER LETTER TIPS</a></li>
-			<li><a href="../Interview_Tips/interview_tips.php">> INTERVIEW TIPS</a></li>
-			</ul>
-			</li>
-			
-			<li><a href="#">AT WORK</a>
-			<ul>
-			<li><a href="../Cheques/cheques.php">> CHEQUES</a></li>
-			<li><a href="../Tax/tax.php">> TAX</a></li>
-			</ul>
-			</li>
-			
-			<li><a href="#" class="active">MY ADVISOR</a></li>
-			<li><a href="../Jobs/jobs.php">JOBS</a></li>
-			<li><a href="../Diary/diary.php"> DIARY</a></li>
-			<li><a href="../My_Preferences/my_preferences.php">SETTINGS</a></li>
-			<li><a href="../Log Out/logout.php">LOG OUT</a></li>
-			
-                    </ul>
-                
-                    
-                </div>
-                
                 <body>
-            <div id="search" class="page-content">
+            <div class="page-content">
             
               
             <?php
@@ -74,22 +40,27 @@ require_once("../mysql_details.php");
 if (!isset($_POST['submit'])) {
 ?>	
 
+            <div class="page-content-2">
+
 			<h3>Add Job</h3> 
+			
+			</div>
 			<div data-role="main" class="ui-content">
  
 <!-- The HTML registration form -->
-	<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-		Job Title: <input type="text" name="job_title" /><br />
-		Job Type: <select name="job_type">
+<div class="form">
+	<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="form">
+		<h3>Job Title: <input type="text" name="job_title" /><br /></h3>
+		<h3>Job Type: <select name="job_type">
   <option value="Permanent">Permanent</option>
     <option value="Contract">Contract</option>
   <option value="Part Time">Part Time</option>
   <option value="Temporary">Temporary</option>
   <option value="Volunteer Work">Volunteer Work</option>
-  </select>
-		Location: <input type="text" name="location" /><br />
-		Salary/Rate: <input type="text" name="salary" />
-		Category: <select name="category_name">
+  </select></h3><br>
+		<h3>Location: <input type="text" name="location" /><br /></h3><br>
+		<h3>Salary/Rate: <input type="text" name="salary" /></h3><br>
+		<h3>Category: <select name="category_name">
   <option value="Accounting">Accounting</option>
   <option value="Admin">Admin</option>
   <option value="Automotive">Automotive</option>
@@ -138,13 +109,14 @@ if (!isset($_POST['submit'])) {
   <option value="Transportation">Transportation</option>
 <option value="Volunteer Work">Volunteer Work</option>
   <option value="Warehouse">Warehouse</option>  
-</select>
-		Description: <input type="text" name="job_description" /><br />
+</select></h3><br>
+		<h3>Description: <input type="text" name="job_description" /><br /></h3>
 		
- 
-		<input type="submit" name="submit" value="Add this job" />
+
+	<div class="submit">	<input type="submit" name="submit" value="Add this job" /></div>
+
 	</form>
-	
+	</div>
 </div>
 	
 <?php
@@ -184,7 +156,7 @@ if (!isset($_POST['submit'])) {
 	}
 ?>		           
             
-        
+
          </div>
     </body>
 </html>

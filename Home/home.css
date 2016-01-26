@@ -16,7 +16,6 @@ img {
 
 .page-wrap {
     width:100%;
-    -webkit-transition: all 0.35s ease-out;
     opacity: 1;
 }
 
