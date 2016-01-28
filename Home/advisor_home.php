@@ -37,10 +37,10 @@ header ("Location: ../Welcome/welcome.php");
              <div class="sidebar">
              
 			<ul>          
-			<li><a href="#" class="active">HOME</a></li>
-			<li><a href="../My_Users/my_users.php">MY USERS</a></li>
-			<li><a href="../Jobs/advisor_jobs.php">JOBS</a></li>
-			<li><a href="../Log Out/logout.php">LOG OUT</a></li>
+			<li><a href="#" class="active"><img src="../Images/home_on.png" style="width:9%; height:4.3%;" ><h9>HOME</h9></a></li>
+			<li><a href="../My_Users/my_users.php"><img src="../Images/clients.png" style="width:11%; height:4.8%;" ><h9>MY CLIENTS</h9></a></li>
+			<li><a href="../Jobs/advisor_jobs.php"><img src="../Images/match.png" style="width:11%; height:4.8%;" ><h9>JOBS</h9></a></li>
+			<li><a href="../Log Out/logout.php"><img src="../Images/logout.png" style="width:11%; height:4.8%;" ><h9>LOG OUT</h9></a></li>
             </ul>
                 
                     

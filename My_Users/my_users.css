@@ -8,6 +8,12 @@ body {
   line-height: 1; 
 }
 
+a{
+display:block;
+}
+a, u {
+    text-decoration: none !important;
+}
 .page-wrap {
     width:100%;
     opacity: 1;
@@ -157,12 +163,23 @@ top: 0em;
 }
 
 .sidebar ul li {
-    padding: 20px;
-    padding-right:0px;
-
+    padding-right:10%;
+padding-left:8%;
+padding-bottom:5%;
+padding-top:5%;
     border-bottom: 2px solid #000;
     color: #c4d6e0;
     font-size: 1.5em;
+}
+
+h9 {
+
+margin-left:15%;
+margin-top:0;
+margin-bottom:3%;
+padding-top:0;
+
+
 }
 
 .sidebar ul li:hover {
@@ -214,6 +231,7 @@ h4 {
 
 
 li{
+
     color: #ff9933;
     font-size: 16px;
     font-weight: bold;

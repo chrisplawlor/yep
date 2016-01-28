@@ -34,15 +34,14 @@ header ("Location: ../Welcome/welcome.php");
         <div class="page-wrap">
             <div class ="headbar">  <h1>YeP</h1> </div>
             <label for="sidebartoggler" class ="toggle" >☰</label> 
-             <div class="sidebar">
+              <div class="sidebar">
              
-            <ul>          
-            <li><a href="../Home/advisor_home.php">HOME</a></li>
-			<li><a href="../My_Users/my_users.php">MY USERS</a></li>
-			<li><a href="../Jobs/advisor_jobs.php" class="active">JOBS</a></li>
-			<li><a href="../Log Out/logout.php">LOG OUT</a></li>
+			<ul>          
+			<li><a href="../Home/advisor_home.php"><img src="../Images/home.png" style="width:9%; height:4.3%;" ><h9>HOME</h9></a></li>
+			<li><a href="../My_Users/my_users.php"><img src="../Images/clients.png" style="width:11%; height:4.8%;" ><h9>MY CLIENTS</h9></a></li>
+			<li><a href="../Jobs/advisor_jobs.php"><img src="../Images/match_on.png" style="width:11%; height:4.8%;" ><h9>JOBS</h9></a></li>
+			<li><a href="../Log Out/logout.php"><img src="../Images/logout.png" style="width:11%; height:4.8%;" ><h9>LOG OUT</h9></a></li>
             </ul>
-			
                 
                     
                 </div>

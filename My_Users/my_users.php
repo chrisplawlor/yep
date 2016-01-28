@@ -34,13 +34,13 @@ header ("Location: ../Welcome/welcome.php");
         <div class="page-wrap">
             <div class ="headbar">  <h1>YeP</h1> </div>
             <label for="sidebartoggler" class ="toggle" >☰</label> 
-             <div class="sidebar">
-             
-            <ul>          
-            <li><a href="../Home/advisor_home.php">HOME</a></li>
-			<li><a href="#" class="active">MY USERS</a></li>
-			<li><a href="../Jobs/advisor_jobs.php">JOBS</a></li>
-			<li><a href="../Log Out/logout.php">LOG OUT</a></li>
+              <div class="sidebar">
+              
+			<ul>          
+			<li><a href="../Home/advisor_home.php"><img src="../Images/home.png" style="width:9%; height:4.3%;" ><h9>HOME</h9></a></li>
+			<li><a href="../My_Users/my_users.php"><img src="../Images/client_on.png" style="width:11%; height:4.8%;" ><h9>MY CLIENTS</h9></a></li>
+			<li><a href="../Jobs/advisor_jobs.php"><img src="../Images/match.png" style="width:11%; height:4.8%;" ><h9>JOBS</h9></a></li>
+			<li><a href="../Log Out/logout.php"><img src="../Images/logout.png" style="width:11%; height:4.8%;" ><h9>LOG OUT</h9></a></li>
             </ul>
                 
                     
@@ -48,7 +48,7 @@ header ("Location: ../Welcome/welcome.php");
                 
                 <body>
             <div id="search" class="page-content">
-			<h3>My Users</h3>            
+			<h3>My Clients</h3>            
             
         
          </div>

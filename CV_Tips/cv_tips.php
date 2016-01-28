@@ -37,29 +37,29 @@ header ("Location: ../Welcome/welcome.php");
              <div class="sidebar">
              
             <ul>          
-            <li><a href="../Home/home.php">HOME</a></li>
+            <li><a href="../Home/home.php"><img src="../Images/home.png" style="width:9%; height:4.3%;" > <h9>HOME</h9></a></li>
             
-			<li><a href="#">PREPARATION</a>
+			<li><a href="#"><img src="../Images/prep_on.png" style="width:11%; height:4.8%;" ><h9>PREPARATION</h9></a>
 			<ul>
-			<li><a href="#" class="active">> CV TIPS</a></li>
+			<li><a href="../CV_Tips/cv_tips.php">> CV TIPS</a></li>
 			<li><a href="../CL_Tips/cl_tips.php">> COVER LETTER TIPS</a></li>
 			<li><a href="../Interview_Tips/interview_tips.php">> INTERVIEW TIPS</a></li>
 			</ul>
 			</li>
 			
-			<li><a href="#">AT WORK</a>
+			<li><a href="#"><img src="../Images/work.png" style="width:11%; height:4.1%;" ><h9>AT WORK</h9></a>
 			<ul>
 			<li><a href="../Cheques/cheques.php">> CHEQUES</a></li>
 			<li><a href="../Tax/tax.php">> TAX</a></li>
 			</ul>
 			</li>
 			
-			<li><a href="../My_Advisor/my_advisor.php">MY ADVISOR</a></li>
-			<li><a href="../Jobs/jobs.php">JOB MATCHES</a></li>
-			<li><a href="../Jobs/search_jobs.php">SEARCH JOBS</a></li>
-			<li><a href="../Diary/diary.php"> MY DIARY</a></li>
-			<li><a href="../My_Preferences/my_preferences.php">SETTINGS</a></li>
-			<li><a href="../Log Out/logout.php">LOG OUT</a></li>
+			<li><a href="../My_Advisor/my_advisor.php"  ><img src="../Images/chat.png" style="width:11%; height:4.8%;" ><h9>MY ADVISOR</h9></a></li>
+			<li><a href="../Jobs/jobs.php"><img src="../Images/match.png" style="width:11%; height:4.8%;" ><h9>JOB MATCHES</h9></a></li>
+			<li><a href="../Jobs/search_jobs.php"><img src="../Images/search.png" style="width:11%; height:4.8%;" ><h9>SEARCH JOBS</h9></a></li>
+			<li><a href="../Diary/diary.php"><img src="../Images/diary_icon.png" style="width:10%; height:4.8%;" > <h9>MY DIARY</h9></a></li>
+			<li><a href="../My_Preferences/my_preferences.php"><img src="../Images/settings.png" style="width:11%; height:4.3%;" ><h9>MY PREFERENCES</h9></a></li>
+			<li><a href="../Log Out/logout.php"><img src="../Images/logout.png" style="width:11%; height:4.8%;" ><h9>LOG OUT</h9></a></li>
 			
                     </ul>
                 
