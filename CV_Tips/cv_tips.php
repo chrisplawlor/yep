@@ -71,6 +71,97 @@ header ("Location: ../Welcome/welcome.php");
             <h3>CV Tips</h3>
             
             
+            </div>
+            
+            
+            <div class="page-content-numbers">
+<h3>1 </h3></div>
+<div class="page-content-5" >
+<h2>Presentation is key</h2></div>
+
+
+<div class="page-content-info">
+
+<p1>Important factors to consider when it comes to presentation is <b>layout</b> and <b>font size</b>. A good font size would be <b>12pt</b>. Have a look at sample CVs online to give you an idea of how they are laid out.</p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>2 </h3>
+</div><div class="page-content-5" ><h2> Tailor the CV to the role </h2></div>
+<div class="page-content-info">
+<p1>Change your CV each time you apply for a different job to add more specific details matching to the role.</p1>
+ </div>
+ 
+ 
+            <div class="page-content-numbers">
+<h3>3 </h3>
+</div> <div class="page-content-5" ><h2>Sensible  email addresses</h2> </div>
+
+<div class="page-content-info">
+<p1>
+◉ No football<br>
+◉ No nicknames<br>
+◉ No hugs and kisses (xo)<br></p1>
+
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>4 </h3>
+</div> 
+<div class="page-content-5" ><h2>Make the most of skills</h2></div>
+
+<div class="page-content-info">
+<p1>Highlight your skills, <b>For example:</b><br><br> ◉ Computer Programming Languages<br>
+◉ Construction Certificates<br>
+◉ Leadership Skills
+ </p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>5 </h3>
+</div><div class="page-content-5" > <h2>Keep your CV updated</h2></div>
+<div class="page-content-info">
+<p1>Regularly updating your CV is good when you have <b>acquired a new skill</b> and means you wont forget to add it later on. Also, it may mean you always have the most updated version of your CV to hand if an employer is asking for one.</p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>6 </h3>
+</div> <div class="page-content-5" ><h2>Spelling and Grammar</h2></div>
+<div class="page-content-info">
+<p1>Make use of the <b>spelling and grammar tool</b> on Microsoft Word when creating or editing your CV and ask others to proof read.</p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>7 </h3>
+</div> <div class="page-content-5" ><h2>Don't leave gaps</h2></div>
+<div class="page-content-info">
+<p1>Leaving gaps in your CV not only affects the presentation but that is also space for you to add more skills and experiences in.</p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>8 </h3>
+</div> <div class="page-content-5" ><h2>Make it look good</h2></div>
+<div class="page-content-info">
+<p1>After you have finished a draft of your CV, have a look and make sure it is presentable. Similarly to tip #1.</p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>9 </h3>
+</div> <div class="page-content-5" ><h2>Check and double check</h2></div>
+<div class="page-content-info">
+<p1>Mistakes in your CV may discourage an employer.  It is very important to check over it thoroughly before sending it away.</p1> 
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>10 </h3>
+</div> <div class="page-content-5" ><h2>Feedback from Others</h2></div>
+<div class="page-content-info">
+<p1>It is very beneficial to give your CV to other to ask them what they think.  Its good to have someone else's opinion before you send it to the employer. </p1>
+ </div>
+
+<br>
+            
+            
         
          </div>
     </body>

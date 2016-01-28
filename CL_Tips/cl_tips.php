@@ -42,7 +42,7 @@ header ("Location: ../Welcome/welcome.php");
 			<li><a href="#">PREPARATION</a>
 			<ul>
 			<li><a href="../CV_Tips/cv_tips.php">> CV TIPS</a></li>
-			<li><a href="#" class="active">> COVER LETTER TIPS</a></li>
+			<li><a href="#" class="active" > COVER LETTER TIPS</a></li>
 			<li><a href="../Interview_Tips/interview_tips.php">> INTERVIEW TIPS</a></li>
 			</ul>
 			</li>
@@ -68,7 +68,52 @@ header ("Location: ../Welcome/welcome.php");
                 
                 <body>
             <div id="search" class="page-content">
-			<h3>Cover Letter Tips</h3>            
+            <h3>Cover Letter Tips</h3>
+            
+            
+            </div>
+            
+            
+            <div class="page-content-numbers">
+<h3>1 </h3></div>
+<div class="page-content-5" >
+<h2>Different job, Different CL</h2></div>
+
+
+<div class="page-content-info">
+
+<p1>Write individual cover letters for every job you apply for as they will all be different.</p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>2 </h3>
+</div><div class="page-content-5" ><h2> What to tell the recruiter... </h2></div>
+<div class="page-content-info">
+<p1>Remind the recruiter what they're looking for and then tell them that you are what they are looking for.</p1>
+ </div>
+ 
+ 
+            <div class="page-content-numbers">
+<h3>3 </h3>
+</div> <div class="page-content-5" ><h2>Why you're the best choice</h2> </div>
+
+<div class="page-content-info">
+<p1>Demonstrate why you are the best choice with examples and show how you could make a difference in the improvement of the company.</p1>
+
+ </div>
+           
+           
+            <div class="page-content-numbers">
+<h3>4 </h3>
+</div><div class="page-content-5" > <h2>Keep it simple</h2></div>
+<div class="page-content-info">
+<p1>Look online for cover letter samples and use that as a guide on both layout and how simple to keep it.  A cover letter usually should be about 1 A4 page.</p1>
+ </div>
+           
+
+
+
+            
             
         
          </div>

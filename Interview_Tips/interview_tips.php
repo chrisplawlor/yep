@@ -41,7 +41,7 @@ header ("Location: ../Welcome/welcome.php");
             
 			<li><a href="#">PREPARATION</a>
 			<ul>
-			<li><a href="../CV_Tips/cv_tips.php">> CV TIPS</a></li>
+			<li><a href="../CV_Tips/cv_tips.php"> CV TIPS</a></li>
 			<li><a href="../CL_Tips/cl_tips.php">> COVER LETTER TIPS</a></li>
 			<li><a href="#" class="active">> INTERVIEW TIPS</a></li>
 			</ul>
@@ -68,7 +68,95 @@ header ("Location: ../Welcome/welcome.php");
                 
                 <body>
             <div id="search" class="page-content">
-			<h3>Interview Tips</h3>            
+            <h3>Interview Tips</h3>
+            
+            
+            </div>
+            
+            
+            <div class="page-content-numbers">
+<h3>1 </h3></div>
+<div class="page-content-5" >
+<h2>Relax</h2></div>
+
+
+<div class="page-content-info">
+
+<p1> Have a quiet evening the night before. Have a bath or watch your favourite film – anything that makes you happy.</p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>2 </h3>
+</div><div class="page-content-5" ><h2> Be punctual </h2></div>
+<div class="page-content-info">
+<p1>Write down the address and work out how you’ll get there. If you can, do a practice run. Aim to arrive 15 minutes before the interview.</p1>
+ </div>
+ 
+ 
+            <div class="page-content-numbers">
+<h3>3 </h3>
+</div> <div class="page-content-5" ><h2>Listen</h2> </div>
+
+<div class="page-content-info">
+<p1>Listen carefully to the questions. Make sure your answer tells them what they need to know.</p1>
+
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>4 </h3>
+</div> 
+<div class="page-content-5" ><h2>Give detail</h2></div>
+
+<div class="page-content-info">
+<p1>Be specific when you’re talking through examples. Explain what the task was, what you did, problems you faced and how you succeeded.
+ </p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>5 </h3>
+</div><div class="page-content-5" > <h2>Know your strengths</h2></div>
+<div class="page-content-info">
+<p1>If you’re confident of your strengths and how they apply to the job you want, it’s easier to sell yourself.</p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>6 </h3>
+</div> <div class="page-content-5" ><h2>Be honest</h2></div>
+<div class="page-content-info">
+<p1>Never lie in a job interview. It’s too easy to get caught out.</p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>7 </h3>
+</div> <div class="page-content-5" ><h2>Ask questions</h2></div>
+<div class="page-content-info">
+<p1>This lets you find out about anything you're unsure of. It also shows that you’re interested in the job.</p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>8 </h3>
+</div> <div class="page-content-5" ><h2>Be positive</h2></div>
+<div class="page-content-info">
+<p1>Use positive language, and talk yourself up. Show you’re enthusiastic about the position and your own career.</p1>
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>9 </h3>
+</div> <div class="page-content-5" ><h2>Don’t dwell on it</h2></div>
+<div class="page-content-info">
+<p1>Try not to fixate on things you wish you had or hadn’t said.</p1> 
+ </div>
+           
+            <div class="page-content-numbers">
+<h3>10 </h3>
+</div> <div class="page-content-5" ><h2>Look over your CV</h2></div>
+<div class="page-content-info">
+<p1>Interviews put you under pressure and can make you forget important things. Be ready to talk about your experience, achievements and qualifications.</p1>
+ </div>
+
+<br>
+<p2>Interview tips information sourced from: https://www.myworldofwork.co.uk/getting-job/interviews </p2>
+            <br>
             
         
          </div>
