@@ -81,13 +81,15 @@ if (!isset($_POST['submit'])) {
 	$meeting_date	= $_POST['meeting_date'];
 	$meeting_time	= $_POST['meeting_time'];
 	$meeting_location	= $_POST['meeting_location'];
+	$username = $_SESSION['username']; 
+
 	
 	
 	
  
 		# insert data into mysql database
-		$sql = "INSERT  INTO `meetings` (`meeting_number`, `meeting_date`, `meeting_time`, `meeting_location`) 
-				VALUES ('{$meeting_number}', '{$meeting_date}', '{$meeting_time}', '{$meeting_location}')";
+		$sql = "INSERT  INTO `meetings` (`meeting_number`, `meeting_date`, `meeting_time`, `meeting_location`, `username_fk`) 
+				VALUES ('{$meeting_number}', '{$meeting_date}', '{$meeting_time}', '{$meeting_location}', '{$username}')";
  
 		if ($mysqli->query($sql)) {
 			

@@ -93,11 +93,14 @@ $(".jobBox").click(function() {
 
 
         <?php
+        
+    $username = $_SESSION['username']; 
+
     //    require_once("../mysql_details.php");
 	//$connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 	$connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti");
 	mysql_select_db("pkb12170",$connection);
-	$sql = "SELECT *  FROM interviews ORDER BY interview_date";
+	$sql = "SELECT *  FROM interviews WHERE interview_username = '$username' ORDER BY interview_date";
 	$myData = mysql_query($sql, $connection);
 
 	while($record = mysql_fetch_array($myData)) {
@@ -139,11 +142,15 @@ $(".jobBox").click(function() {
 
 
         <?php
+            $username = $_SESSION['username']; 
+
     //    require_once("../mysql_details.php");
 	//$connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 	$connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti");
 	mysql_select_db("pkb12170",$connection);
-	$sql = "SELECT *  FROM meetings ORDER BY meeting_date";
+	$sql = "SELECT *  FROM meetings WHERE username_fk = '$username' ORDER BY meeting_date";
+	
+
 	$myData = mysql_query($sql, $connection);
 
 	while($record = mysql_fetch_array($myData)) {

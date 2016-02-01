@@ -70,7 +70,86 @@ header ("Location: ../Welcome/welcome.php");
             <div id="search" class="page-content">
 			<h3>My Advisor</h3>            
             
-        
-         </div>
+            <br><br><br><br><br><br><br><br>
+        <?php
+
+$connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti");
+	mysql_select_db("pkb12170",$connection);
+	
+	
+	function get_msg() {
+	
+	$query = "SELECT * FROM chat";
+	
+	$run = mysql_query($query);
+	
+	$messages = array();
+	
+	while($message = mysql_fetch_assoc($run)) {
+		$messages[] = array('sender'=>$message['sender'],
+							'message'=>$message['message']);
+							}
+							
+							return $messages; 
+	
+	}  
+
+        //User in session name is set to the sender
+          $_POST['sender'] = $_SESSION['username']; 
+           
+	function send_msg($sender, $message) {
+	
+	 if(!empty($sender) && !empty($message)) {
+	 
+	 $sender = mysql_real_escape_string($sender);
+	 $message = mysql_real_escape_string($message);
+	 
+	 $query = "INSERT INTO chat VALUES (null, '{$sender}','$message')";
+	 
+	 if($run = mysql_query($query)) {
+	 return true;
+	 } else {
+	 return false;
+	 }
+	 }
+	
+	else{
+	return false;
+	} 
+	}
+	
+	
+	if(isset($_POST['send'], $_POST['message'])) {
+		if(send_msg($_POST['sender'], $_POST['message'])) {
+			echo 'Message Sent.';
+			}
+			else {
+			echo 'Message Failed to send.';
+			}
+			}
+?>
+<div class="messages">
+
+<?php
+
+$messages = get_msg();
+foreach($messages as $message) {
+?> <h5> <?php echo $message['sender'].'<br />';?></h5>
+
+<p5>
+<?php
+echo $message['message'].'<br /><br />';
+}
+?>
+</p5>
+</div>
+
+
+<div class="enter-message" >
+<form action="my_advisor.php" method="post" >
+<input type="text" name="message" /></div>
+<div class="send-button" ><input type="submit" name="send" value="Send" />
+</form>
+</div>
     </body>
 </html>

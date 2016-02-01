@@ -40,7 +40,7 @@ if (!isset($_POST['submit'])) {
 
 <div class="page-content-2">
 
-			<h3>Diary: New Interview</h3> 
+			<h3>Diary: New Meeting</h3> 
 			</div>
 			
 			<div data-role="main" class="ui-content">
@@ -49,7 +49,7 @@ if (!isset($_POST['submit'])) {
 
 
 <div class="form">
-	<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="form">
+<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="form">
 		<h3>
 		Name: <input type="text" name="entry_name" /><br /></h3>
 		<br>
@@ -59,9 +59,6 @@ if (!isset($_POST['submit'])) {
 		<br>
 		<h3>Location: <input type="text" name="interview_location" /></h3>
 		<br>
-	<h3>Notes: <input type="text" name="interview_notes" /></h3></div>
-		<br>
-
 		<div class="submit"><input type="submit" name="submit" value="Submit" /></div>
 
 	</form>
@@ -81,16 +78,17 @@ if (!isset($_POST['submit'])) {
 	# prepare data for insertion
 	$entry_name	= $_POST['entry_name'];
 	$interview_location	= $_POST['interview_location'];
-	$interview_notes	= $_POST['interview_notes'];
 	$interview_date	= $_POST['interview_date'];
 	$interview_time	= $_POST['interview_time'];
+	$username = $_SESSION['username']; 
+
 	
 	
 	
  
 		# insert data into mysql database
-		$sql = "INSERT  INTO `interviews` (`entry_name`, `interview_location`, `interview_notes`, `interview_date`, `interview_time`) 
-				VALUES ('{$entry_name}', '{$interview_location}', '{$interview_notes}', '{$interview_date}', '{interview_time}')";
+		$sql = "INSERT  INTO `interviews` (`entry_name`, `interview_location`,  `interview_date`, `interview_time`, `interview_username`) 
+				VALUES ('{$entry_name}', '{$interview_location}',  '{$interview_date}', '{$interview_time}', '{$username}')";
  
 		if ($mysqli->query($sql)) {
 			

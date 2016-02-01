@@ -136,16 +136,16 @@ if (!isset($_POST['submit'])) {
 	$salary	= $_POST['salary'];
 	$category_name	= $_POST['category_name'];
 	$job_description	= $_POST['job_description'];
-	
+	$username = $_SESSION['username']; 
+
 	
 	
  
 		# insert data into mysql database
-		$sql = "INSERT  INTO `job` (`job_title`, `job_type`, `location`, `salary`, `category_name`, `job_description`) 
-				VALUES ('{$job_title}', '{$job_type}', '{$location}', '{$salary}', '{$category_name}', '{$job_description}')";
+		$sql = "INSERT  INTO `job` (`job_title`, `job_type`, `location`, `salary`, `category_name`, `job_description`, `job_username`) 
+				VALUES ('{$job_title}', '{$job_type}', '{$location}', '{$salary}', '{$category_name}', '{$job_description}', '{$username}')";
  
 		if ($mysqli->query($sql)) {
-			//header('Location: register_success.php');
 			
 			header('Location: ../Jobs/advisor_jobs.php');
 		} else {
