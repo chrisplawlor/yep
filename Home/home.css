@@ -37,62 +37,192 @@ a, u {
     transition: all .3s ease-out 0; 
     width:100%;
     height:10%;
+    
 
 }
-.page-content-numbers {
+
+
+
+.level {
+    position: absolute;
+    background: yellowgreen;
+    margin-bottom:0;
+    z-index: 0;
+    margin: 0%;
+    margin-top: 3%; 
+    margin-left: 65%; 
+    transition: all .3s ease-out 0; 
+    width:25%;
+    height:5%;
+    border: 1px solid white;
+}
+
+.level-number {
     position: absolute;
     background: #25a851;
     margin-bottom:0;
     z-index: 0;
     margin: 0%;
-    margin-top: 1.6%; 
-    margin-left: 1.6%; 
+    margin-top: 3%; 
+    margin-left: 85.5%;
+     
     transition: all .3s ease-out 0; 
     width:10%;
     height:5%;
+    border: 1px solid white;
+}
+
+.name {
+    position: absolute;
+    background: yellowgreen;
+    margin-bottom:0;
+    z-index: 0;
+    margin: 0%;
+    margin-top: 3%; 
+    margin-left: 3%; 
+    transition: all .3s ease-out 0; 
+    width:50%;
+    height:5%;
+    border: 1px solid white;
+
+}
+
+.name h5 {
+    
+    padding-top:1%;
+padding-left:0;
+margin-top:3%;
+margin-left:8%;
+    color:#0e2d50;
+    font-size:1.7em;
+}
+
+.overall1 {
+    position: absolute;
+    background: #d5584e;
+    margin-bottom:0;
+    z-index: 0;
+    margin: 0%;
+    margin-top: 125%; 
+    margin-left: 3%; 
+    transition: all .3s ease-out 0; 
+    width:93%;
+    height:8%;
+    border: 1px solid white;
+
+}
+
+.overall2 {
+    position: absolute;
+    background: #d5584e;
+    margin-bottom:0;
+    z-index: 0;
+    margin: 0%;
+    margin-top: 145%; 
+    margin-left: 3%; 
+    transition: all .3s ease-out 0; 
+    width:93%;
+    height:8%;
+    border: 1px solid white;
+
+}
+
+.overall3 {
+    position: absolute;
+    background: #d5584e;
+    margin-bottom:0;
+    z-index: 0;
+    margin: 0%;
+    margin-top: 165%; 
+    margin-left: 3%; 
+    transition: all .3s ease-out 0; 
+    width:93%;
+    height:8%;
+    border: 1px solid white;
+
+}
+
+.overall h5 {
+    
+    padding-top:1%;
+padding-left:0;
+margin-top:3%;
+margin-left:8%;
+    color:#0e2d50;
+    font-size:1.7em;
 }
 
 
-.page-content-numbers h3 {
-    position: relative;
-    text-align:center;
-    margin-top:5%;
+
+
+.level h6 {
+    
+    padding-top:8%;
+margin-left:18%;
     color:#0e2d50;
+    font-size:1.7em;
+}
+
+.level-number h3 {
+    
+    padding-top:16%;
+        padding-left:7%;
+
+    color:#0e2d50;
+    font-size:1.7em;
 }
 
 
 .page-content-2 {
     position: relative;
-    background: #ddf2f8;
+    background: #fbb736;
     margin-left:0;
     z-index: 0;
     margin: 0%;
-    margin-top: 0%; 
+    margin-top: 3%; 
     transition: all .3s ease-out 0; 
     width:100%;
+    height:10%;
+
 }
 
 .page-content-3 {
     position: relative;
-    background: #ffc119;
-    margin-bottom:0;
+    background: #5d6d7f;
+    margin-left:0;
     z-index: 0;
-    margin: 0%;
-    margin-top: 1.6%; 
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 3%; 
+    margin-bottom: 3%; 
     transition: all .3s ease-out 0; 
-    width:100%;
-    height:6%;
+    width:94%;
+    height:105%;
+
+}
+
+.page-content-3 h1 {
+    color: #fff;
+    font-size:2em;
+    margin-left:18%;
+    padding-top:4%;
+    
+
 }
 
 .page-content-4 {
     position: relative;
-    background: #ddf2f8;
+    background: #5d6d7f;
     margin-left:0;
     z-index: 0;
-    margin: 0%;
-    margin-top: 4%; 
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 3%; 
+    margin-bottom: 3%; 
     transition: all .3s ease-out 0; 
-    width:100%;
+    width:20%;
+    height:20%;
+
 }
 
 .page-content-5 {
@@ -130,7 +260,17 @@ a, u {
 position:absolute;
 text-align:center;
 margin-top: 5%;
-    margin-left:37%;
+    margin-left:15%;
+    
+
+
+}
+.page-content-2 h3{
+position:absolute;
+text-align:center;
+margin-top: 5%;
+    margin-left:27%;
+    color:#000;
     
 
 
@@ -406,6 +546,23 @@ button[type=submit] {
  border: 1px solid #bbb;
  -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
 }
+
+
+.pie {
+position:absolute;
+margin-left:14%;
+margin-top:10%;
+  width: 70%; height: 37%;
+  border-radius: 50%;
+background: #28c045;
+}
+
+.piechart {
+position:absolute;
+margin-top:15%;
+}
+
+
 
 
 

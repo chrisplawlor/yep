@@ -35,7 +35,7 @@ header ("Location: ../Welcome/welcome.php");
             <div class ="headbar">  <h1>YeP</h1> </div>
             <label for="sidebartoggler" class ="toggle" >☰</label> 
               <div class="sidebar">
-              
+             
 			<ul>          
 			<li><a href="../Home/advisor_home.php"><img src="../Images/home.png" style="width:9%; height:4.3%;" ><h9>HOME</h9></a></li>
 			<li><a href="../My_Users/my_users.php"><img src="../Images/client_on.png" style="width:11%; height:4.8%;" ><h9>MY CLIENTS</h9></a></li>
@@ -47,10 +47,56 @@ header ("Location: ../Welcome/welcome.php");
                 </div>
                 
                 <body>
-            <div id="search" class="page-content">
-			<h3>My Clients</h3>            
-            
+            <div class="page-content">
+      
+      <h3> My Clients </h3>
+      </div>
+
+
+<script>
+//script for the job box are in the while loop
+
+$(".jobBox").click(function() {
+  window.location = $(this).find("a").attr("href"); 
+  return false;
+});
+
+
+</script>
+            <div  class="page-content-2">
+
+
+        <?php
         
+        	$username = $_SESSION['username']; 
+
+	$connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti");
+	mysql_select_db("pkb12170",$connection);
+	$sql = "SELECT * FROM user WHERE advisor_username = '$username' ";
+	
+	$myData = mysql_query($sql, $connection);
+
+
+	while($record = mysql_fetch_array($myData)) {
+	?>
+	<div class="jobBox">
+	
+	 <a href="job_overview.php"></a>
+	 
+	<hr>
+	<h4> <?php echo $record['first_name'] . " ". $record['last_name']; ?></h4>
+	 <div class="level-number"> <h3> <?php echo $record['level_number']; ?> </h3></div>
+	<?php
+	}
+		
+
+	mysql_close($connection);
+	
+        
+        ?>
+        <hr>
+        </div>
+        </div>
          </div>
     </body>
 </html>

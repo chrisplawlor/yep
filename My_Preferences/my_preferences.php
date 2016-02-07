@@ -67,10 +67,32 @@ header ("Location: ../Welcome/welcome.php");
                 </div>
                 
                 <body>
-            <div id="search" class="page-content">
+            <div class="page-content">
 			<h3>My Preferences</h3>            
+            
             
         
          </div>
+         
+         <div class="page-content-2">
+         
+         <div class="categories-button"> 
+<a href="categories.php"> <img src="../Images/categories.png" style="width:98%;height:13%;"> </a>
+</div>  
+
+ <div class="skills-button"> 
+<a href="categories.php"> <img src="../Images/skills.png" style="width:98%;height:13%;"> </a>
+</div>  
+
+ <div class="hobbies-button"> 
+<a href="categories.php"> <img src="../Images/hobbies.png" style="width:98%;height:13%;"> </a>
+</div>  
+
+ <div class="cv-button"> 
+<a href="categories.php"> <img src="../Images/cv.png" style="width:98%;height:13%;"> </a>
+</div>  
+<br>
+         </div>
+
     </body>
 </html>

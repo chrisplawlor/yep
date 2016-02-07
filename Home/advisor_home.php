@@ -45,21 +45,28 @@ header ("Location: ../Welcome/welcome.php");
                 
                     
                 </div>
-                
-                <body>
-            <div id="search" class="page-content">
+              <body>
+            <div class="page-content">
            <h3>Youth Employment App</h3>
-          <img src="../Images/Untitled.png"  style="width:160px;height:100px;position:center;">
-           <p1> Welcome, </p1>
-           <p2> 
+           </div>
+                       <div class="page-content-2">
+
+           <h3>Client Overview</h3>
+           </div>
+                       
+        <div class="page-content-3">
+        
+        <h1> Welcome, 
+        
            <?php
         
-           echo $_SESSION['username']; 
+           echo " " . $_SESSION['username']; 
            ?>
-           </p2>
-            
-            
+           !</h1>
+
+
+</div>
+</div>
         
-         </div>
     </body>
 </html>

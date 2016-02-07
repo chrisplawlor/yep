@@ -66,10 +66,14 @@ header ("Location: ../Welcome/welcome.php");
                     
                 </div>
                 
-                <body>
-            <div id="search" class="page-content">
-			<h3>Jobs</h3>            
-            
+              <body>
+            <div  class="page-content">
+           <h3>Your Jobs Matches</h3>
+  </div>
+
+            <div  class="page-content-2">
+
+        </div>
         
          </div>
     </body>

@@ -67,10 +67,9 @@ header ("Location: ../Welcome/welcome.php");
                 </div>
                 
                 <body>
-            <div id="search" class="page-content">
-			<h3>Tax</h3>            
-            
-        
-         </div>
+            <div  class="page-content">
+			<h3>Tax</h3>           
+			</div> 
+            <div  class="page-content-2">
     </body>
 </html>

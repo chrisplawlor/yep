@@ -26,7 +26,12 @@ a, u {
     width:100%;
     opacity: 1;
 }
-
+.form {
+    
+    margin-top: 5%; 
+    margin-left: 5%; 
+  margin-right: 5%; 
+}
 .page-content {
     position: relative;
     background: #0e2d50;
@@ -63,66 +68,48 @@ a, u {
 
 .page-content-2 {
     position: relative;
-    background: #fbb736;
+    background: #ddf2f8;
     margin-left:0;
     z-index: 0;
     margin: 0%;
-    margin-top: 3%; 
+    margin-top: 1.5%; 
     transition: all .3s ease-out 0; 
     width:100%;
-    height:10%;
+   
 
 }
 
 .page-content-3 {
     position: relative;
-    background: #414c58;
-    margin-left:0;
-    z-index: 0;
-    margin-left: 3%;
-    margin-right: 3%;
-    margin-top: 3%; 
-    margin-bottom: 3%; 
+    background: #ffc119;
+    margin-bottom:0;
+    margin: 0%;
+    margin-top: 1.6%; 
     transition: all .3s ease-out 0; 
-    width:94%;
-    height:100%;
-
-}
-
-.page-content-3 h1 {
-    color: #fff;
-    font-size:2em;
-    margin-left:15%;
-    padding-top:4%;
-    
-
+    width:100%;
+    height:6%;
 }
 
 .page-content-4 {
-    position: relative;
-    background: #fff;
+    position: absolute;
+    background: #ddf2f8;
     margin-left:0;
     z-index: 0;
-    margin-left: 3%;
-    margin-right: 3%;
-    margin-top: 3%; 
-    margin-bottom: 3%; 
+    margin: 0%;
+    margin-top: 2%; 
     transition: all .3s ease-out 0; 
-    width:20%;
-    height:20%;
-
+    width:100%;
 }
 
 .page-content-5 {
     position: relative;
     background: #ffc119;
     margin-bottom:0;
-    z-index: 0;
-    margin-left:13%;
-    margin-top: 1.6%; 
+    margin: 0%;
+    margin-top: .3%; 
     transition: all .3s ease-out 0; 
-    width:85%;
-    height:5%;
+    width:100%;
+    height:6%;
 }
 .page-content-info {
 
@@ -148,23 +135,22 @@ a, u {
 position:absolute;
 text-align:center;
 margin-top: 5%;
-    margin-left:15%;
-    
-
-
-}
-.page-content-2 h3{
-position:absolute;
-text-align:center;
-margin-top: 5%;
-    margin-left:27%;
-    color:#000;
+    margin-left:32%;
     
 
 
 }
 
 .page-content-3 h3{
+position:absolute;
+text-align:center;
+    margin-top: 3%;
+    margin-left:27%;
+    font-size:1.7em;
+    color:#0e2d50;
+}
+
+.page-content-5 h3{
 position:absolute;
 text-align:center;
     margin-top: 3%;

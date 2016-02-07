@@ -25,7 +25,39 @@ header ("Location: ../Welcome/welcome.php");
 <link rel="icon" href="../Images/Icon.png">
 <link rel="apple-touch-icon"  href="../Images/Icon.png">
 <link rel="apple-touch-icon-precomposed" href="../Images/Icon.png">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
 
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Hobbies',     12.5],
+          ['Ambitions',      12.5],
+          ['Money',  12.5],
+          ['Health', 12.5],
+          ['Housing',    12.5],
+          ['Social',    12.5],
+          ['Education',    12.5],
+          ['Skills',    12.5]
+        ]);
+
+        var options = {
+          //title: 'My Daily Activities'
+          colors: ['#e0440e', '#25a851', '#25a851', '#e0440e', '#e0440e'],
+          backgroundColor: '#5d6d7f',
+ chartArea:{left:16,top:20,width:"90%",height:"90%"},          
+ legend: 'none',
+        pieSliceText: 'label',
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
    </head>
 
    
@@ -67,19 +99,60 @@ header ("Location: ../Welcome/welcome.php");
                 </div>
                 
                 <body>
-            <div id="search" class="page-content">
+            <div class="page-content">
            <h3>Youth Employment App</h3>
-          <img src="../Images/Untitled.png"  style="width:160px;height:100px;position:center;">
-           <p1> Welcome, </p1>
-           <p2> 
-           <?php
+           </div>
+                       <div class="page-content-2">
+
+           <h3>Your Progress</h3>
+           </div>
+                       
+        <div class="page-content-3">
+    <?php
         
-           echo $_SESSION['username']; 
-           ?>
-           </p2>
-            
-            
+        	$username = $_SESSION['username']; 
+
+	$connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti");
+	mysql_select_db("pkb12170",$connection);
+	$sql = "SELECT * FROM user WHERE username = '$username' ";
+	
+	$myData = mysql_query($sql, $connection);
+
+
+	if($record = mysql_fetch_array($myData)) {
+	?>
+	<div class="name"> <h5> <?php echo $record['first_name'] . " " .  $record['last_name']; ?> </h5></div>
+<div class="level"> <h6> Level </h6></div>
+ <div class="level-number"> <h3> <?php echo $record['level_number']; ?> </h3></div>
+ 
+ <?php
+	}
+		
+
+	mysql_close($connection);
+	
         
-         </div>
+        ?>
+        
+    <div class="piechart" id="piechart" style="width: 100%; height: 60%;"></div>
+<div class="overall1">
+        
+        </div>
+        
+        <div class="overall2">
+        
+        </div>
+        
+        <div class="overall3">
+        
+        </div>
+</div>
+        
+
+
+
+
+</div>
+        
     </body>
 </html>

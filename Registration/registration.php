@@ -57,7 +57,7 @@ if (!isset($_POST['submit'])) {
 		Password: <input type="password" name="password" /><br />
 		Confirm Password: <input type="password" name="c_password" /><br />
 		Email: <input type="email" name="email" /><br />
-		Advisor Id:* <input type="text" name="advisor" /><br />
+		Advisor Id:* <input type="text" name="advisor_username" /><br />
 		*Leave blank to be assigned an advisor
  
 		<input type="submit" name="submit" value="Register" />
@@ -82,7 +82,8 @@ if (!isset($_POST['submit'])) {
 	$first_name	= $_POST['first_name'];
 	$last_name	= $_POST['last_name'];
 	$email		= $_POST['email'];
- 
+ 	$advisor_username		= $_POST['advisor_username'];
+
 	# check if username and email exist else insert
 	$exists = 0;
 	$result = $mysqli->query("SELECT username from user WHERE username = '{$username}' LIMIT 1");
@@ -100,8 +101,8 @@ if (!isset($_POST['submit'])) {
 	else if ($exists == 3) echo "<p>Email already exists!</p>";
 	else {
 		# insert data into mysql database
-		$sql = "INSERT  INTO `user` (`username`, `password`, `c_password`, `first_name`, `last_name`, `email`) 
-				VALUES ('{$username}', '{$password}', '{$c_password}', '{$first_name}', '{$last_name}', '{$email}')";
+		$sql = "INSERT  INTO `user` (`username`, `password`, `c_password`, `first_name`, `last_name`, `email`, `advisor_username`) 
+				VALUES ('{$username}', '{$password}', '{$c_password}', '{$first_name}', '{$last_name}', '{$email}', '{$advisor_username}')";
  
 		if ($mysqli->query($sql)) {
 			header('Location: register_success.php');

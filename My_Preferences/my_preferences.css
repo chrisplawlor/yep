@@ -11,6 +11,30 @@ body {
  
 
 }
+
+.categories-button{
+margin-left:2.5%;
+margin-top:2.5%;
+
+}
+
+.skills-button{
+margin-left:2.5%;
+margin-top:2.5%;
+
+}
+
+.hobbies-button{
+margin-left:2.5%;
+margin-top:2.5%;
+
+}
+
+.cv-button{
+margin-left:2.5%;
+margin-top:2.5%;
+
+}
 .recent {
 
 margin-top:3%
@@ -62,14 +86,17 @@ a, u {
 
 
 .page-content-2 {
+
     position: relative;
     background: #ddf2f8;
-    margin-left:0;
-    z-index: 0;
-    margin: 0%;
-    margin-top: 0%; 
+    margin-bottom:5%;
+    margin-left:1.6%;
+    margin-top: 3%; 
     transition: all .3s ease-out 0; 
-    width:100%;
+    width:96.7%;
+    overflow:auto;
+        
+
 }
 
 .page-content-3 {
@@ -130,7 +157,7 @@ a, u {
 position:absolute;
 text-align:center;
 margin-top: 5%;
-    margin-left:37%;
+    margin-left:28%;
     
 
 

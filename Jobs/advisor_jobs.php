@@ -53,7 +53,7 @@ header ("Location: ../Welcome/welcome.php");
   <img src="../Images/button-21.png" style="position: relative; top:2.5%; bottom:2%;left: 3%; right:5%; width:94%;height:38%;">
   </a>
    <br><br>
-     <a href="../Search_Jobs/advisor_search_jobs.php">
+     <a href="search_jobs_advisor.php">
 
    <img src="../Images/button-23.png" style="position: relative;  left: 3%; right:5%; width:94%;height:38%;">
   
