@@ -20,7 +20,7 @@ header ("Location: ../Welcome/welcome.php");
             <meta name="apple-mobile-web-app-capable" content="yes">
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
             <meta name="mobile-web-app-capable" content="yes">
-            <link type = "text/css" href ="add_interview.css" rel = "stylesheet" >
+            <link type = "text/css" href ="add_skills.css" rel = "stylesheet" >
             <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 <link rel="icon" href="../Images/Icon.png">
 <link rel="apple-touch-icon"  href="../Images/Icon.png">
@@ -34,15 +34,15 @@ header ("Location: ../Welcome/welcome.php");
             
               
             <?php
-require_once("../mysql_details.php");
+require_once("../../mysql_details.php");
 if (!isset($_POST['submit'])) {
 ?>	
 
 <div class="page-content-2">
-<a href="../Diary/diary.php">
-			<img src="../Images/back.png" style="position: absolute; top:0%; bottom:5%;left: 1%; right:5%; width:10%;height:100%;">
+<a href="skills.php">
+			<img src="../../Images/back.png" style="position: absolute; top:0%; bottom:5%;left: 1%; right:5%; width:10%;height:100%;">
 </a>
-			<h3>Diary: New Interview</h3> 
+<h3>Add a Skill</h3> 
 			</div>
 			
 			<div data-role="main" class="ui-content">
@@ -51,17 +51,12 @@ if (!isset($_POST['submit'])) {
 
 
 <div class="form">
-<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="form">
-		<h3>
-		Name: <input type="text" name="entry_name" /><br /></h3>
-		<br>
-		<h3>Date of Interview: <input type="date" name="interview_date" /> <br /></h3>
-		<br>
-		<h3>Time: <input type="time" name="interview_time" /> <br /></h3>
-		<br>
-		<h3>Location: <input type="text" name="interview_location" /></h3>
-		<br>
-		<div class="submit"><input type="submit" name="submit" value="Submit" /></div>
+	<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="form">
+		<h3> <input type = "text" name="skill_name" > </h3>
+	<br>
+
+
+		<div class="submit"><input type="submit" name="submit" value="Save" /></div>
 
 	</form>
 	</div>
@@ -78,10 +73,7 @@ if (!isset($_POST['submit'])) {
 	}
 ## query database
 	# prepare data for insertion
-	$entry_name	= $_POST['entry_name'];
-	$interview_location	= $_POST['interview_location'];
-	$interview_date	= $_POST['interview_date'];
-	$interview_time	= $_POST['interview_time'];
+	$skill_name	= $_POST['skill_name'];
 	$username = $_SESSION['username']; 
 
 	
@@ -89,12 +81,12 @@ if (!isset($_POST['submit'])) {
 	
  
 		# insert data into mysql database
-		$sql = "INSERT  INTO `interviews` (`entry_name`, `interview_location`,  `interview_date`, `interview_time`, `interview_username`) 
-				VALUES ('{$entry_name}', '{$interview_location}',  '{$interview_date}', '{$interview_time}', '{$username}')";
+		$sql = "INSERT  INTO `skills` (`skill_name`, `skills_username`) 
+				VALUES ('{$skill_name}', '{$username}')";
  
 		if ($mysqli->query($sql)) {
 			
-			header('Location: ../Diary/diary.php');
+			header('Location: skills.php');
 		} else {
 			echo "<p>MySQL error no {$mysqli->errno} : {$mysqli->error}</p>";
 			exit();

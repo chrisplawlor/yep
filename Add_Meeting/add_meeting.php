@@ -39,8 +39,10 @@ if (!isset($_POST['submit'])) {
 ?>	
 
 <div class="page-content-2">
-
-			<h3>Diary: New Meeting</h3> 
+<a href="../Diary/diary.php">
+			<img src="../Images/back.png" style="position: absolute; top:0%; bottom:5%;left: 1%; right:5%; width:10%;height:100%;">
+</a>
+<h3>Diary: New Meeting</h3> 
 			</div>
 			
 			<div data-role="main" class="ui-content">

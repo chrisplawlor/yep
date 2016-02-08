@@ -46,24 +46,24 @@ header ("Location: ../Welcome/welcome.php");
                     
                 </div>
                 
-                <body onload="form1.submit()">
+                <body>
             <div class="page-content">
       
       <h3> My Clients </h3>
       </div>
       
-	<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="form" name="form1">
+	<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="form">
 <br><select name="sort_names">
-<option value="default"> Sort by Name </option>
+<option> Sort by Name </option>
   <option value="firstname" name="first_name">First Name</option>
     <option value="surname" name="surname">Surname</option>
   </select><select name="sort_levels">
-  <option value="default2" name="default2">  Sort by Level </option>
+  <option> Sort by Level </option>
   <option value="ascending" name="ascending">Ascending</option>
     <option value="descending"name="descending">Descending</option>
   </select>
   
- <input type="submit" name="submit" value="Go"/>
+  <input type="submit" name="submit" value="Go"/>
   </form>
             <div  class="page-content-2">
 
@@ -78,8 +78,22 @@ header ("Location: ../Welcome/welcome.php");
 
 	
 //Default (no sort)
+	$sql = "SELECT * FROM user WHERE advisor_username = '$username'";
+	
+	$defaultData = mysql_query($sql, $connection);
 
 
+	while($record = mysql_fetch_array($defaultData)) {
+	?>
+	<div class="jobBox">
+	
+	 
+	<hr>
+	<h4> <?php echo $record['first_name'] . " ". $record['last_name']; ?></h4>
+	 <div class="level-number"> <h3> <?php echo $record['level_number']; }?> </h3></div>
+	 
+	 
+	 <?php
 //Sort levels in ascending order	
 if($_POST['sort_levels'] == 'ascending') {
 
@@ -95,10 +109,10 @@ if($_POST['sort_levels'] == 'ascending') {
 	 
 	<hr>
 	<h4> <?php echo $record['first_name'] . " ". $record['last_name']; ?></h4>
-	 <div class="level-number"> <h3> <?php echo $record['level_number']; ?> </h3></div>
+	 <div class="level-number"> <h3> <?php echo $record['level_number']; }}?> </h3></div>
 	<?php
 	
-		}}
+		
 //Sort levels in descending order		
 if($_POST['sort_levels'] == 'descending') {
 
@@ -114,9 +128,8 @@ if($_POST['sort_levels'] == 'descending') {
 	 
 	<hr>
 	<h4> <?php echo $record['first_name'] . " ". $record['last_name']; ?></h4>
-	 <div class="level-number"> <h3> <?php echo $record['level_number']; ?> </h3></div>
+	 <div class="level-number"> <h3> <?php echo $record['level_number']; }}?> </h3></div>
 	<?php
-	}}
 	//Sort first names in ascending order		
 if($_POST['sort_names'] == 'firstname') {
 
@@ -132,10 +145,10 @@ if($_POST['sort_names'] == 'firstname') {
 	 
 	<hr>
 	<h4> <?php echo $record['first_name'] . " ". $record['last_name']; ?></h4>
-	 <div class="level-number"> <h3> <?php echo $record['level_number']; ?> </h3></div>
+	 <div class="level-number"> <h3> <?php echo $record['level_number']; }}?> </h3></div>
 	<?php
 			
-}}
+
 //Sort surnames in ascending order		
 if($_POST['sort_names'] == 'surname') {
 
@@ -151,9 +164,10 @@ if($_POST['sort_names'] == 'surname') {
 	 
 	<hr>
 	<h4> <?php echo $record['first_name'] . " ". $record['last_name']; ?></h4>
-	 <div class="level-number"> <h3> <?php echo $record['level_number']; ?> </h3></div>
+	 <div class="level-number"> <h3> <?php echo $record['level_number']; }}?> </h3></div>
 	<?php
-	}}
+
+	
 	
 	mysql_close($connection);
 	

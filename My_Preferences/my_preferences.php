@@ -77,19 +77,19 @@ header ("Location: ../Welcome/welcome.php");
          <div class="page-content-2">
          
          <div class="categories-button"> 
-<a href="categories.php"> <img src="../Images/categories.png" style="width:98%;height:13%;"> </a>
+<a href="Categories/categories.php"> <img src="../Images/categories.png" style="width:98%;height:12%;"> </a>
 </div>  
 
  <div class="skills-button"> 
-<a href="categories.php"> <img src="../Images/skills.png" style="width:98%;height:13%;"> </a>
+<a href="Skills/skills.php"> <img src="../Images/skills.png" style="width:98%;height:12%;"> </a>
 </div>  
 
  <div class="hobbies-button"> 
-<a href="categories.php"> <img src="../Images/hobbies.png" style="width:98%;height:13%;"> </a>
+<a href="Hobbies/hobbies.php"> <img src="../Images/hobbies.png" style="width:98%;height:12%;"> </a>
 </div>  
 
  <div class="cv-button"> 
-<a href="categories.php"> <img src="../Images/cv.png" style="width:98%;height:13%;"> </a>
+<a href="#"> <img src="../Images/cv.png" style="width:98%;height:12%;"> </a>
 </div>  
 <br>
          </div>

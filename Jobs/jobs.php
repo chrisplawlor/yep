@@ -68,13 +68,68 @@ header ("Location: ../Welcome/welcome.php");
                 
               <body>
             <div  class="page-content">
-           <h3>Your Jobs Matches</h3>
+           <h3>Your Job Matches</h3>
   </div>
+  
+  
+
 
             <div  class="page-content-2">
+             <?php
+        
+        	$username = $_SESSION['username']; 
 
+	$connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti");
+	mysql_select_db("pkb12170",$connection);
+	$sql = "SELECT * FROM job ";
+	$myData = mysql_query($sql, $connection);
+
+
+	$record = mysql_fetch_array($myData)
+	?>
+              <div  class="job-title">
+           <h4><?php echo $record['job_title']; ?></h4>
+  </div>
+ 
+	<div class="jobBox">
+	
+	 <a href="job_overview.php"></a>
+	 
+	
+	
+	
+	<h2><?php echo nl2br (" Location: ");?></h2><p1>
+	<?php echo $record['location'];?></p1>
+	<h6> <?php echo nl2br ("\n Salary: ")?></h6><p1>
+	<?php echo "£" . $record['salary'];?></p1>
+	<h6> <?php echo nl2br ("\n Job Type: ");?></h6><p1>
+	 <?php echo $record['job_type'];?></p1>
+	 <h6> <?php echo nl2br ("\n Description: ");?></h6><p1>
+	 <?php echo $record['job_description'];?></p1><?php
+	
+		
+
+	mysql_close($connection);
+	
+        
+        ?>
+        </div>
+  
         </div>
         
+        <div class="match-button-cross" >
+         <input type="submit" name="action" value="no" /> 
+  <img src="../Images/cross.png" style="position: absolute; padding-top:0%; bottom:2%;left: 17%; right:5%; width:26%;height:14%;">
+  </a>
+  </div>
+  
+   <div class="match-button-tick" >
+       <input type="submit" name="action" value="yes" />
+ 
+  <img src="../Images/tick.png" style="position: absolute; padding-top:0%; bottom:2%;left: 56%; right:5%; width:26%;height:14%;">
+  
+  </div>
+  
          </div>
     </body>
 </html>

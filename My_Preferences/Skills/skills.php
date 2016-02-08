@@ -20,7 +20,7 @@ header ("Location: ../Welcome/welcome.php");
             <meta name="apple-mobile-web-app-capable" content="yes">
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
             <meta name="mobile-web-app-capable" content="yes">
-            <link type = "text/css" href ="add_interview.css" rel = "stylesheet" >
+            <link type = "text/css" href ="skills.css" rel = "stylesheet" >
             <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 <link rel="icon" href="../Images/Icon.png">
 <link rel="apple-touch-icon"  href="../Images/Icon.png">
@@ -34,15 +34,17 @@ header ("Location: ../Welcome/welcome.php");
             
               
             <?php
-require_once("../mysql_details.php");
+require_once("../../mysql_details.php");
 if (!isset($_POST['submit'])) {
 ?>	
 
 <div class="page-content-2">
-<a href="../Diary/diary.php">
-			<img src="../Images/back.png" style="position: absolute; top:0%; bottom:5%;left: 1%; right:5%; width:10%;height:100%;">
+<a href="../my_preferences.php">
+			<img src="../../Images/back.png" style="position: absolute; top:0%; bottom:5%;left: 1%; right:5%; width:10%;height:100%;">
 </a>
-			<h3>Diary: New Interview</h3> 
+<h3>My Skills</h3><a href="add_skills.php">
+<img src="../../Images/plus.png" style="position: absolute; top:0%; bottom:5%;left: 88%; right:5%; width:12%;height:100%;">
+ </a>
 			</div>
 			
 			<div data-role="main" class="ui-content">
@@ -50,20 +52,38 @@ if (!isset($_POST['submit'])) {
 <!-- The HTML registration form -->
 
 
-<div class="form">
-<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="form">
-		<h3>
-		Name: <input type="text" name="entry_name" /><br /></h3>
-		<br>
-		<h3>Date of Interview: <input type="date" name="interview_date" /> <br /></h3>
-		<br>
-		<h3>Time: <input type="time" name="interview_time" /> <br /></h3>
-		<br>
-		<h3>Location: <input type="text" name="interview_location" /></h3>
-		<br>
-		<div class="submit"><input type="submit" name="submit" value="Submit" /></div>
 
-	</form>
+        <?php
+        
+    $username = $_SESSION['username']; 
+
+    //    require_once("../mysql_details.php");
+	//$connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+	$connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti");
+	mysql_select_db("pkb12170",$connection);
+	$sql = "SELECT *  FROM skills WHERE skills_username = '$username' ";
+	$myData = mysql_query($sql, $connection);
+
+	while($record = mysql_fetch_array($myData)) {
+	
+	
+	?>
+		 
+	<hr>
+				<div class="skill-content">
+
+	<h4> <?php echo $record['skill_name']; ?></h4></div>
+	<?php
+	
+		
+}
+	mysql_close($connection);
+	
+        
+        ?>
+        <hr>
+        
+         </div>
 	</div>
 </div>
 	
@@ -78,10 +98,10 @@ if (!isset($_POST['submit'])) {
 	}
 ## query database
 	# prepare data for insertion
-	$entry_name	= $_POST['entry_name'];
-	$interview_location	= $_POST['interview_location'];
-	$interview_date	= $_POST['interview_date'];
-	$interview_time	= $_POST['interview_time'];
+	$meeting_number	= $_POST['meeting_number'];
+	$meeting_date	= $_POST['meeting_date'];
+	$meeting_time	= $_POST['meeting_time'];
+	$meeting_location	= $_POST['meeting_location'];
 	$username = $_SESSION['username']; 
 
 	
@@ -89,8 +109,8 @@ if (!isset($_POST['submit'])) {
 	
  
 		# insert data into mysql database
-		$sql = "INSERT  INTO `interviews` (`entry_name`, `interview_location`,  `interview_date`, `interview_time`, `interview_username`) 
-				VALUES ('{$entry_name}', '{$interview_location}',  '{$interview_date}', '{$interview_time}', '{$username}')";
+		$sql = "INSERT  INTO `meetings` (`meeting_number`, `meeting_date`, `meeting_time`, `meeting_location`, `username_fk`) 
+				VALUES ('{$meeting_number}', '{$meeting_date}', '{$meeting_time}', '{$meeting_location}', '{$username}')";
  
 		if ($mysqli->query($sql)) {
 			

@@ -2,7 +2,7 @@
 
 session_start();
 
-if (!(isset($_SESSION['advisor_login']) && $_SESSION['advisor_login'] != '')) {
+if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 
 //Takes user back to login page as they are not logged in
 header ("Location: ../Welcome/welcome.php");
@@ -20,7 +20,7 @@ header ("Location: ../Welcome/welcome.php");
             <meta name="apple-mobile-web-app-capable" content="yes">
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
             <meta name="mobile-web-app-capable" content="yes">
-            <link type = "text/css" href ="add_job.css" rel = "stylesheet" >
+            <link type = "text/css" href ="add_category.css" rel = "stylesheet" >
             <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 <link rel="icon" href="../Images/Icon.png">
 <link rel="apple-touch-icon"  href="../Images/Icon.png">
@@ -28,40 +28,30 @@ header ("Location: ../Welcome/welcome.php");
 
    </head>
 
-           
-        <div class="page-wrap">
-            
-                <body>
+   
+                     <body>
             <div class="page-content">
             
               
             <?php
-require_once("../mysql_details.php");
+require_once("../../mysql_details.php");
 if (!isset($_POST['submit'])) {
 ?>	
 
-            <div class="page-content-2">
-<a href="../Diary/diary.php">
-			<img src="../Images/back.png" style="position: absolute; top:0%; bottom:5%;left: 1%; right:5%; width:10%;height:100%;">
+<div class="page-content-2">
+<a href="categories.php">
+			<img src="../../Images/back.png" style="position: absolute; top:0%; bottom:5%;left: 1%; right:5%; width:10%;height:100%;">
 </a>
-			<h3>Add Job</h3> 
-			
+<h3>Add a Category</h3> 
 			</div>
+			
 			<div data-role="main" class="ui-content">
  
 <!-- The HTML registration form -->
+
+
 <div class="form">
 	<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="form">
-		<h3>Job Title: <input type="text" name="job_title" /><br /></h3>
-		<h3>Job Type: <select name="job_type">
-  <option value="Permanent">Permanent</option>
-    <option value="Contract">Contract</option>
-  <option value="Part Time">Part Time</option>
-  <option value="Temporary">Temporary</option>
-  <option value="Volunteer Work">Volunteer Work</option>
-  </select></h3><br>
-		<h3>Location: <input type="text" name="location" /><br /></h3><br>
-		<h3>Salary/Rate: <input type="text" name="salary" /></h3><br>
 		<h3>Category: <select name="category_name">
   <option value="Accounting">Accounting</option>
   <option value="Admin">Admin</option>
@@ -112,10 +102,9 @@ if (!isset($_POST['submit'])) {
 <option value="Volunteer Work">Volunteer Work</option>
   <option value="Warehouse">Warehouse</option>  
 </select></h3><br>
-		<h3>Description: <input type="text" name="job_description" /><br /></h3>
-		
 
-	<div class="submit">	<input type="submit" name="submit" value="Add this job" /></div>
+
+		<div class="submit"><input type="submit" name="submit" value="Save" /></div>
 
 	</form>
 	</div>
@@ -132,24 +121,20 @@ if (!isset($_POST['submit'])) {
 	}
 ## query database
 	# prepare data for insertion
-	$job_title	= $_POST['job_title'];
-	$job_type	= $_POST['job_type'];
-	$location	= $_POST['location'];
-	$salary	= $_POST['salary'];
 	$category_name	= $_POST['category_name'];
-	$job_description	= $_POST['job_description'];
 	$username = $_SESSION['username']; 
 
 	
 	
+	
  
 		# insert data into mysql database
-		$sql = "INSERT  INTO `job` (`job_title`, `job_type`, `location`, `salary`, `category_name`, `job_description`, `job_username`) 
-				VALUES ('{$job_title}', '{$job_type}', '{$location}', '{$salary}', '{$category_name}', '{$job_description}', '{$username}')";
+		$sql = "INSERT  INTO `categories` (`category_name`, `categories_username`) 
+				VALUES ('{$category_name}', '{$username}')";
  
 		if ($mysqli->query($sql)) {
 			
-			header('Location: ../Jobs/advisor_jobs.php');
+			header('Location: categories.php');
 		} else {
 			echo "<p>MySQL error no {$mysqli->errno} : {$mysqli->error}</p>";
 			exit();
