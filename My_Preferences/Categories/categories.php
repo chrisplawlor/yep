@@ -72,7 +72,7 @@ if (!isset($_POST['submit'])) {
 	<hr>
 				<div class="skill-content">
 
-	<h4> <?php echo $record['category_name']; ?></h4></div>
+	<h4> <?php echo $record['c_name']; ?></h4></div>
 	<?php
 	
 		

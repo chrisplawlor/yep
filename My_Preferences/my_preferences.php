@@ -55,7 +55,7 @@ header ("Location: ../Welcome/welcome.php");
 			</li>
 			
 			<li><a href="../My_Advisor/my_advisor.php"  ><img src="../Images/chat.png" style="width:11%; height:4.8%;" ><h9>MY ADVISOR</h9></a></li>
-			<li><a href="../Jobs/jobs.php"><img src="../Images/match.png" style="width:11%; height:4.8%;" ><h9>JOB MATCHES</h9></a></li>
+			<li><a href="../Jobs/jobs.php"><img src="../Images/match.png" style="width:11%; height:4.8%;" ><h9>MY JOBS</h9></a></li>
 			<li><a href="../Jobs/search_jobs.php"><img src="../Images/search.png" style="width:11%; height:4.8%;" ><h9>SEARCH JOBS</h9></a></li>
 			<li><a href="../Diary/diary.php"><img src="../Images/diary_icon.png" style="width:10%; height:4.8%;" > <h9>MY DIARY</h9></a></li>
 			<li><a href="../My_Preferences/my_preferences.php"><img src="../Images/settings_on.png" style="width:11%; height:4.3%;" ><h9>MY PREFERENCES</h9></a></li>

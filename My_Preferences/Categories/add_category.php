@@ -52,7 +52,7 @@ if (!isset($_POST['submit'])) {
 
 <div class="form">
 	<form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="form">
-		<h3>Category: <select name="category_name">
+		<h3>Category: <select name="c_name">
   <option value="Accounting">Accounting</option>
   <option value="Admin">Admin</option>
   <option value="Automotive">Automotive</option>
@@ -121,7 +121,7 @@ if (!isset($_POST['submit'])) {
 	}
 ## query database
 	# prepare data for insertion
-	$category_name	= $_POST['category_name'];
+	$c_name	= $_POST['c_name'];
 	$username = $_SESSION['username']; 
 
 	
@@ -129,8 +129,8 @@ if (!isset($_POST['submit'])) {
 	
  
 		# insert data into mysql database
-		$sql = "INSERT  INTO `categories` (`category_name`, `categories_username`) 
-				VALUES ('{$category_name}', '{$username}')";
+		$sql = "INSERT  INTO `categories` (`c_name`, `categories_username`) 
+				VALUES ('{$c_name}', '{$username}')";
  
 		if ($mysqli->query($sql)) {
 			

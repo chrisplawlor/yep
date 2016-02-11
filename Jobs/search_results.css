@@ -11,37 +11,6 @@ body {
  
 
 }
-
-.matches-button {
-
-margin-top: 16%; 
-
-}
-
-.job-title {
-    position: relative;
-    background: #ffc119;
-    margin-bottom:0;
-    margin-left: 0%;
-    margin-top: 0%; 
-    transition: all .3s ease-out 0; 
-    width:100%;
-    height:12%;
-}
-
-.job-title  h4 {
- margin-top: 0%;
-    padding-top: 3%;
-    margin-bottom: 0em;
-    text-align: center;
-    color: #000;
-    font-size: 2em;
-}
-
-
-
-
-
 .recent {
 
 margin-top:3%
@@ -69,14 +38,12 @@ a, u {
     margin-left:0;
     z-index: 0;
     margin: 0%;
-    margin-top: 4%; 
+    margin-top: 0%; 
     transition: all .3s ease-out 0; 
     width:100%;
     height:10%;
 
 }
-
-
 .page-content-numbers {
     position: absolute;
     background: #25a851;
@@ -100,14 +67,16 @@ a, u {
 
 
 .page-content-2 {
-    position: absolute;
-    background: #fff;
-    margin-left:0%;
+    position: relative;
+    background: #ddf2f8;
+    margin-left:0;
     z-index: 0;
-    margin-top: 0%; 
+    margin: 0%;
+    margin-top: 1.5%; 
     transition: all .3s ease-out 0; 
     width:100%;
-    height:100%;
+   
+
 }
 
 .page-content-3 {
@@ -166,7 +135,7 @@ a, u {
 position:absolute;
 text-align:center;
 margin-top: 5%;
-    margin-left:36%;
+    margin-left:28%;
     
 
 
@@ -327,6 +296,12 @@ padding:20px;
     display: block;
 }
 
+h2{
+    font-size:2em;
+    margin-top:1.6%;
+    margin-left:3%;
+
+}
 
 h3 {
  margin-top: 2%;
@@ -350,7 +325,7 @@ p1 {
     display: block;
 position:relative;
 padding-top:3%;
-padding-bottom:0%;
+padding-bottom:5%;
     margin-left:5%;
         margin-right:5%;
 line-height: 120%;
@@ -359,23 +334,12 @@ line-height: 120%;
 }
 
 h6 {
- margin-top: 1%;
+ padding-top: 2%;
     margin-bottom:.5%;
     margin-left:5%;
     color: #0e2d50;
     font-size: 1.5em;
 }
-
-h2 {
-display:block;
- margin-top: 6%;
-    margin-bottom:.5%;
-    margin-left:5%;
-    color: #0e2d50;
-    font-size: 1.5em;
-}
-
-
 
 
 li{
