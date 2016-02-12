@@ -83,8 +83,43 @@ header ("Location: ../Welcome/welcome.php");
   
 
 
-            <div  class="page-content-2">
-             
+             <div  class="page-content-2">
+
+
+        <?php
+        
+        	$username = $_SESSION['username']; 
+
+	$connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti");
+	mysql_select_db("pkb12170",$connection);
+	$sql = "SELECT * FROM job_matches WHERE matched_username = '$username' ORDER BY match_id DESC";
+	$myData = mysql_query($sql, $connection);
+
+while($record = mysql_fetch_array($myData)) {
+	?>
+	<div class="jobBox">
+	
+	 <a href="job_overview.php"></a>
+	 
+	<hr>
+	<h4> <?php echo $record['matched_title']; ?></h4>
+	
+	
+	<h6><?php echo nl2br (" Location: ");?>
+	<?php echo $record['matched_location'];?></h6>
+	<h6> <?php echo nl2br ("\n Salary: ")?>
+	<?php echo $record['matched_salary'];?></h6>
+	<h6> <?php echo nl2br ("\n Job Type: ");?>
+	 <?php echo $record['matched_type'];?></h6><?php
+	}
+		
+
+	mysql_close($connection);
+	
+        
+        ?>
+        <hr>
+        </div>
         </div>
   
         

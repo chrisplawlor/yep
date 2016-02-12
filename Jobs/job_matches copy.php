@@ -66,76 +66,79 @@ $search_sql="SELECT *
 			 OR category_name LIKE c_name)";
 
 $myData = mysql_query($search_sql, $connection)or die(mysql_error());
-$counter=   1;
+$counter=0;
 	
 while($record = mysql_fetch_array($myData)) {
 
-    echo '<form method="post" action="match_save.php" >';
 
 //if(mysql_num_rows($myData)!=0) {
 
 	//$record = mysql_fetch_array($myData)
 	?>
               <div  class="job-title">
-           <h4><?php echo '<input type="hidden" value="'.$record['job_title'].'" id="job_title'.$counter.'" name="job_title'.$counter.'" />';
-                echo $record['job_title'];
-               
-               ?></h4>
+           <h4><?php echo $record['job_title']; ?></h4>
   </div>
  
 	<div class="jobBox">
 	
 	 <a href="job_overview.php"></a>
+	 <form method="post">
 
 	
 	<!-- Displays job profile -->
-		<h2><?php echo nl2br (" Category: ");?></h2><p1>
-	<?php echo '<input type="hidden" value="'.$record['category_name'].'" id="job_category'.$counter.'" name="job_category'.$counter.'" />';
-        echo $record['category_name'];?></p1>
-        
+	
 	<h2><?php echo nl2br (" Location: ");?></h2><p1>
-	<?php echo '<input type="hidden" value="'.$record['location'].'" id="location'.$counter.'" name="location'.$counter.'" />';
-        echo $record['location'];?></p1>
+	<?php echo $record['location'];?></p1>
 	<h6> <?php echo nl2br ("\n Salary: ")?></h6><p1>
-	<?php echo '<input type="hidden" value="'.$record['salary'].'" id="salary'.$counter.'" name="salary'.$counter.'" />';
-        echo "£" . $record['salary'];?></p1>
+	<?php echo "£" . $record['salary'];?></p1>
 	<h6> <?php echo nl2br ("\n Job Type: ");?></h6><p1>
-	 <?php echo '<input type="hidden" value="'.$record['job_type'].'" id="job_type'.$counter.'" name="job_type'.$counter.'" />';
-        echo $record['job_type'];?></p1>
+	 <?php echo $record['job_type'];?></p1>
 	 <h6> <?php echo nl2br ("\n Description: ");?></h6><p1>
-	 <?php echo '<input type="hidden" value="'.$record['job_description'].'" id="job_description'.$counter.'" name="job_description'.$counter.'" />';
-        echo $record['job_description'];?></p1>
-
-  <!--Yes and No buttons for each job profile -->
-	<div  class="button-background">
-        
-             <div class="match-button-cross" >
- <?php echo '<input type="image"  src="../Images/cross.png" style="position: absolute; padding-top:0%; bottom:2%;left: 17%; right:5%; width:26%;height:95%;" value="submit" alt="submit" id="no'.$counter.'" name="no'.$counter.'" />';?>
-                 
-        </div>
-             <div class="match-button-tick" >
-
-	 <?php echo '<input type="image"  src="../Images/tick.png" style="position: absolute; padding-top:0%; bottom:2%;left: 56%; right:5%; width:26%;height:95%;" value="submit" alt="submit" id="yes'.$counter.'" name="yes'.$counter.'" />';?>
-
-        </div></div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><?php
-
-					  $counter ++;
-        
-        ?>
+	 <?php echo $record['job_description'];?></p1>
+	
+	
+	<?php
+	     if(isset($_REQUEST['submit']))
+ {
+	$match_title = $record['job_title']; 
+  $match_category = $record['category_name']; 
+  $match_location = $record['location'];
+  $match_salary = $record['salary'];
+  $match_type = $record['job_type'];
+  $match_description = $record['job_description'];
+  
+	$sql = mysql_query("INSERT  INTO `job_matches` (`matched_title`, `matched_type`, `matched_location`, `matched_salary`, `matched_category`, `matched_description`, `matched_username`) 
+				VALUES ('{$match_title}', '{$match_type}', '{$match_location}', '{$match_salary}', '{$match_category}', '{$match_description}', '{$username}')");
+			 $result = mysql_query($sql);
+				  $counter ++;
+	
+			}	
+	?>
 	
 
 
+<input type="submit" name="submit">
 
 
 </form>
 
-</div>
 
+
+<!-- Yes and No buttons for each job profile 
+	<div  class="button-background">
+
+       <div class="match-button-cross" >
+  <input type="image" src="../Images/cross.png" style="position: absolute; padding-top:0%; bottom:2%;left: 17%; right:5%; width:26%;height:95%;" alt="Submit">
+  </div>
+  
+   <div class="match-button-tick" >
+  <input type="image" src="../Images/tick.png" name="submit" style="position: absolute; padding-top:0%; bottom:2%;left: 56%; right:5%; width:26%;height:95%;" alt="Submit">
+  </div>
+  </div>-->
 <?php
 		
 		}
-if(mysql_fetch_array($myData)!= null) {
+if(mysql_fetch_array($myData)== null) {
 ?>
 <h5>
 
