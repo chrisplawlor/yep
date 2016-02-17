@@ -29,32 +29,25 @@ header ("Location: ../Welcome/welcome.php");
    </head>
 
    
-        <input type="checkbox"  id="sidebartoggler" name ="" value=""> 
-        
-        <div class="page-wrap">
-            <div class ="headbar">  <h1>YeP</h1> </div>
-            <label for="sidebartoggler" class ="toggle" >☰</label> 
-            <div class="sidebar">
-             
-            	<ul>          
-			<li><a href="../Home/advisor_home.php"><img src="../Images/home.png" style="width:9%; height:4.3%;" ><h9>HOME</h9></a></li>
-			<li><a href="../My_Users/my_users.php"><img src="../Images/client_on.png" style="width:11%; height:4.8%;" ><h9>MY CLIENTS</h9></a></li>
-			<li><a href="../Jobs/advisor_jobs.php"><img src="../Images/match.png" style="width:11%; height:4.8%;" ><h9>JOBS</h9></a></li>
-			<li><a href="../Log Out/logout.php"><img src="../Images/logout.png" style="width:11%; height:4.8%;" ><h9>LOG OUT</h9></a></li>
-            </ul>
+       
                 
                     
-                </div>
                 
                 <body>
+                
             <div class="page-content">
+                
+                
+                 <a href="my_users.php">
+			<img src="../Images/back_blue.png" style="position: absolute; top:0%; bottom:5%;left: 1%; right:5%; width:13%;height:100%;">
+</a>
 			<h3><?php 
-error_reporting(0);
+$username = $_SESSION['username']; 
+
                $clientName = $_POST['clientName']; 
                 echo $clientName;
                 $clientUsername = $_POST['clientUsername']; 
-                //echo $clientUsername;
-                
+
                 ?></h3>            
             
             <br><br><br><br><br><br><br><br>
@@ -63,35 +56,45 @@ error_reporting(0);
 $connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti");
 	mysql_select_db("pkb12170",$connection);
 	
-	
+	//error_reporting(0);
+
+
+        	
 	function get_msg() {
-	
-	$query = "SELECT * FROM chat";
+$username = $_SESSION['username']; 
+$clientName = $_POST['clientName']; 
+$clientUsername = $_POST['clientUsername']; 
+        
+	$query = "SELECT * FROM chat WHERE (sender = '$username' OR sender = '$clientUsername') AND (message_username = '$clientUsername' OR message_username = '$username') ";
 	
 	$run = mysql_query($query);
 	
 	$messages = array();
-	
+
 	while($message = mysql_fetch_assoc($run)) {
 		$messages[] = array('sender'=>$message['sender'],
 							'message'=>$message['message']);
 							}
 							
 							return $messages; 
-	
+    
 	}  
 
         //User in session name is set to the sender
-          $_POST['sender'] = $_SESSION['username']; 
+                  $_POST['sender'] = $_SESSION['username']; 
+
            
 	function send_msg($sender, $message) {
-	
+	$username = $_SESSION['username']; 
+$clientName = $_POST['clientName']; 
+$clientUsername = $_POST['clientUsername'];
 	 if(!empty($sender) && !empty($message)) {
 	 
 	 $sender = mysql_real_escape_string($sender);
 	 $message = mysql_real_escape_string($message);
-	 
-	 $query = "INSERT INTO chat VALUES (null, '{$sender}','$message')";
+	 $clientUsername = mysql_real_escape_string($clientUsername);
+	 $query = "INSERT  INTO `chat` (`sender`, `message`, `message_username`) 
+				VALUES ('{$sender}','$message', '$clientUsername')";
 	 
 	 if($run = mysql_query($query)) {
 	 return true;
@@ -108,10 +111,10 @@ $connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti
 	
 	if(isset($_POST['send'], $_POST['message'])) {
 		if(send_msg($_POST['sender'], $_POST['message'])) {
-			echo 'Message Sent.';
+			echo '<h6>'. 'Message Sent.' . '</h6>';
 			}
 			else {
-			echo 'Message Failed to send.';
+			echo '<h4>' . 'Message Failed to send.' . '</h4>';
 			}
 			}
 ?>
@@ -119,9 +122,14 @@ $connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti
 
 <?php
 
+$query = "SELECT * FROM advisor WHERE username = '$username'";
+    $data = mysql_query($query);
+$record = mysql_fetch_assoc($data);
+    
 $messages = get_msg();
 foreach($messages as $message) {
-?> <h5> <?php echo $message['sender'].'<br />';?></h5>
+    
+?> <h5> <?php echo $record['first_name'].'<br />';?></h5>
 
 <p5>
 <?php
@@ -131,12 +139,17 @@ echo $message['message'].'<br /><br />';
 </p5>
 </div>
 
-
+                
 <!--<div class="enter-message" >-->
 <form action="advisor_chat.php" method="post" >
 <input type="text" name="message" />
+          <!-- submits the client's name back to advisor_chat.php -->
+    <input type="hidden" name="clientName" value="<?php echo $clientName ?>">
+            
+            <!-- submits the client's username back to advisor_chat.php -->
+            <input type="hidden" name="clientUsername" value="<?php echo $clientUsername ?>"> 
 <div class="send-button" ><input type="submit" name="send" value="Send" />
 </form>
-</div>
+    </div>
     </body>
 </html>
