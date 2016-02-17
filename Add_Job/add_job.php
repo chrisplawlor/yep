@@ -41,7 +41,7 @@ if (!isset($_POST['submit'])) {
 ?>	
 
             <div class="page-content-2">
-<a href="../Diary/diary.php">
+<a href="../Jobs/advisor_jobs.php">
 			<img src="../Images/back.png" style="position: absolute; top:0%; bottom:5%;left: 1%; right:5%; width:10%;height:100%;">
 </a>
 			<h3>Add Job</h3> 
@@ -61,6 +61,38 @@ if (!isset($_POST['submit'])) {
   <option value="Volunteer Work">Volunteer Work</option>
   </select></h3><br>
 		<h3>Location: <input type="text" name="location" /><br /></h3><br>
+        <h3>Location: <select name="location">
+  <option value="Aberdeen City">Aberdeen City</option>
+  <option value="Aberdeenshire">Aberdeenshire</option>
+  <option value="Angus">Angus</option>
+  <option value="Argyll and Bute">Argyll and Bute</option>
+  <option value="Clackmannanshire">Clackmannanshire</option>
+  <option value="Dumfries and Galloway">Dumfries and Galloway</option>
+  <option value="Dundee City">Dundee City</option>
+  <option value="East Ayrshire">East Ayrshire</option>
+  <option value="East Dunbartonshire">East Dunbartonshire</option>
+  <option value="East Lothian">East Lothian</option>
+  <option value="East Renfrewshire">East Renfrewshire</option>
+  <option value="City of Edinburgh">City of Edinburgh</option>
+  <option value="Falkirk">Falkirk</option>
+  <option value="Fife">Fife</option>
+  <option value="Glasgow City">Glasgow City</option>
+  <option value="Highland">Highland</option>
+  <option value="Inverclyde">Inverclyde</option>
+  <option value="Midlothian">Midlothian</option>
+  <option value="Moray">Moray</option>
+  <option value="North Ayrshire">North Ayrshire</option>
+  <option value="North Lanarkshire">North Lanarkshire</option>
+  <option value="Perth and Kinross">Perth and Kinross</option>
+  <option value="Renfrewshire">Renfrewshire</option>
+  <option value="Scottish Borders">Scottish Borders</option>
+  <option value="South Ayrshire">South Ayrshire</option>
+  <option value="South Lanarkshire">South Lanarkshire</option>
+  <option value="Stirling">Stirling</option>
+  <option value="West Dunbartonshire">West Dunbartonshire</option>
+  <option value="West Lothian">West Lothian</option>
+   
+</select></h3><br>
 		<h3>Salary/Rate: <input type="text" name="salary" /></h3><br>
 		<h3>Category: <select name="category_name">
   <option value="Accounting">Accounting</option>
@@ -114,6 +146,7 @@ if (!isset($_POST['submit'])) {
 </select></h3><br>
 		<h3>Description: <input type="text" name="job_description" /><br /></h3>
 		
+		<h3>Application Link: <input type="text" name="apply_link" /><br /></h3>
 
 	<div class="submit">	<input type="submit" name="submit" value="Add this job" /></div>
 
@@ -138,14 +171,15 @@ if (!isset($_POST['submit'])) {
 	$salary	= $_POST['salary'];
 	$category_name	= $_POST['category_name'];
 	$job_description	= $_POST['job_description'];
+    $apply_link	= $_POST['apply_link'];
 	$username = $_SESSION['username']; 
 
 	
 	
  
 		# insert data into mysql database
-		$sql = "INSERT  INTO `job` (`job_title`, `job_type`, `location`, `salary`, `category_name`, `job_description`, `job_username`) 
-				VALUES ('{$job_title}', '{$job_type}', '{$location}', '{$salary}', '{$category_name}', '{$job_description}', '{$username}')";
+		$sql = "INSERT  INTO `job` (`job_title`, `job_type`, `location`, `salary`, `category_name`, `job_description`, `job_username`, `apply_link`) 
+				VALUES ('{$job_title}', '{$job_type}', '{$location}', '{$salary}', '{$category_name}', '{$job_description}', '{$username}', '{$apply_link}')";
  
 		if ($mysqli->query($sql)) {
 			

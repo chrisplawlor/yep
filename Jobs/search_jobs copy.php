@@ -76,7 +76,7 @@ header ("Location: ../Welcome/welcome.php");
 <form name="form" method="post" action="search_results.php">
     <h4> Keyword <br> <input name="search" type="text" /></h4>
 	<h4> Type of Job <select name="job_type" >
-	<option values="Any type">Any job type </option>
+	<option>Any job type </option>
   <option value="Permanent">Permanent</option>
     <option value="Contract">Contract</option>
   <option value="Part Time">Part Time</option>
@@ -84,16 +84,16 @@ header ("Location: ../Welcome/welcome.php");
   <option value="Volunteer Work">Volunteer Work</option>
   </select></h4><br>
   <h4>  Category <select name="category_name">
-		<option value="Any category">All Categories</option>
+		<option value="All Categories">All Categories</option>
   <option value="Accounting">Accounting</option>
   <option value="Admin">Admin</option>
   <option value="Automotive">Automotive</option>
   <option value="Banking">Banking</option>
   <option value="Biotech">Biotech</option>
   <option value="Broadcast">Broadcast</option>
-  <option value="BusinessDevelopment">Business Development</option>
+  <option value="Business Development">Business Development</option>
   <option value="Construction">Construction</option>
-  <option value="CustomerService">Customer Service</option>
+  <option value="Customer Service">Customer Service</option>
   <option value="Design">Design</option>
   <option value="Distribution">Distribution</option>
   <option value="Education">Education</option>
@@ -134,39 +134,7 @@ header ("Location: ../Welcome/welcome.php");
 <option value="Volunteer Work">Volunteer Work</option>
   <option value="Warehouse">Warehouse</option>  
       </select><br></h4>
-   <h4>Location: <select name="location">
-       <option value="Any location">Any Location</option>
-  <option value="Aberdeen City">Aberdeen City</option>
-  <option value="Aberdeenshire">Aberdeenshire</option>
-  <option value="Angus">Angus</option>
-  <option value="Argyll and Bute">Argyll and Bute</option>
-  <option value="Clackmannanshire">Clackmannanshire</option>
-  <option value="Dumfries and Galloway">Dumfries and Galloway</option>
-  <option value="Dundee City">Dundee City</option>
-  <option value="East Ayrshire">East Ayrshire</option>
-  <option value="East Dunbartonshire">East Dunbartonshire</option>
-  <option value="East Lothian">East Lothian</option>
-  <option value="East Renfrewshire">East Renfrewshire</option>
-  <option value="City of Edinburgh">City of Edinburgh</option>
-  <option value="Falkirk">Falkirk</option>
-  <option value="Fife">Fife</option>
-  <option value="Glasgow City">Glasgow City</option>
-  <option value="Highland">Highland</option>
-  <option value="Inverclyde">Inverclyde</option>
-  <option value="Midlothian">Midlothian</option>
-  <option value="Moray">Moray</option>
-  <option value="North Ayrshire">North Ayrshire</option>
-  <option value="North Lanarkshire">North Lanarkshire</option>
-  <option value="Perth and Kinross">Perth and Kinross</option>
-  <option value="Renfrewshire">Renfrewshire</option>
-  <option value="Scottish Borders">Scottish Borders</option>
-  <option value="South Ayrshire">South Ayrshire</option>
-  <option value="South Lanarkshire">South Lanarkshire</option>
-  <option value="Stirling">Stirling</option>
-  <option value="West Dunbartonshire">West Dunbartonshire</option>
-  <option value="West Lothian">West Lothian</option>
-   
-</select></h4><br>
+	<h4>Location <br><input name="location" type="text" /></h4>
 
     <h7><input type="submit" name="submit" value="Search" /></h7>
 

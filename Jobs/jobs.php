@@ -89,17 +89,16 @@ header ("Location: ../Welcome/welcome.php");
         <?php
         
         	$username = $_SESSION['username']; 
-
+//Note: display matched jobs which have an id, those without a job_id_fk are not displayed, but still saved so it knows not to display it again
 	$connection = mysql_connect("devweb2014.cis.strath.ac.uk", "pkb12170", "couslyti");
 	mysql_select_db("pkb12170",$connection);
-	$sql = "SELECT * FROM job_matches WHERE matched_username = '$username' ORDER BY match_id DESC";
+	$sql = "SELECT * FROM job_matches WHERE matched_username = '$username' AND job_id_fk IS NOT NULL ORDER BY match_id DESC";
 	$myData = mysql_query($sql, $connection);
 
 while($record = mysql_fetch_array($myData)) {
 	?>
 	<div class="jobBox">
 	
-	 <a href="job_overview.php"></a>
 	 
 	<hr>
 	<h4> <?php echo $record['matched_title']; ?></h4>
@@ -110,7 +109,14 @@ while($record = mysql_fetch_array($myData)) {
 	<h6> <?php echo nl2br ("\n Salary: ")?>
 	<?php echo $record['matched_salary'];?></h6>
 	<h6> <?php echo nl2br ("\n Job Type: ");?>
-	 <?php echo $record['matched_type'];?></h6><?php
+	 <?php echo $record['matched_type'];?></h6>
+            
+            <a href="http://<?php echo $record['application_link'] ?>">
+  <img src="../Images/apply_now.png" alt="Submit" style=" margin-left:60%; width:38%;height:5%;">
+</a>
+        <?php
+    
+    
 	}
 		
 

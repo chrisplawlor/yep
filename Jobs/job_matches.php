@@ -58,16 +58,32 @@ mysql_select_db("pkb12170",$connection);
 
 $username = $_SESSION['username']; 
 
-$search_sql="SELECT * 
-			 FROM job, skills, categories 
-			 WHERE (skills_username = '$username' 
-			 OR categories_username = '$username')
-			 AND(job_skill LIKE skill_name
-			 OR category_name LIKE c_name)";
+             
+ $jobid = "SELECT `job_id` FROM job";
 
+ $jobidfk = "SELECT `job_id_fk` FROM job_matches WHERE job_id_fk = '$username'";
+
+//if job_matches is null then query
+    
+$search_sql="SELECT * 
+			 FROM job, skills, categories, job_matches";
+			 
+             
+             
+             
+             
+    if($jobidfk == null){
+          $search_sql.= "WHERE (skills_username = '$username'
+			 OR categories_username = '$username' )
+			 AND(job_skill LIKE skill_name
+			 OR category_name LIKE c_name) 
+             ORDER BY rand() LIMIT 1";
+
+    
 $myData = mysql_query($search_sql, $connection)or die(mysql_error());
 $counter=   1;
 	
+
 while($record = mysql_fetch_array($myData)) {
 
     echo '<form method="post" action="match_save.php" >';
@@ -86,8 +102,10 @@ while($record = mysql_fetch_array($myData)) {
 	<div class="jobBox">
 	
 	 <a href="job_overview.php"></a>
-
-	
+        
+        <!-- Job id values, so that they can be read in and compared with the users current match saves -->
+<?php echo '<input type="hidden" value="'.$record['job_id'].'" id="job_id'.$counter.'" name="job_id'.$counter.'" />';
+	?>
 	<!-- Displays job profile -->
 		<h2><?php echo nl2br (" Category: ");?></h2><p1>
 	<?php echo '<input type="hidden" value="'.$record['category_name'].'" id="job_category'.$counter.'" name="job_category'.$counter.'" />';
@@ -105,7 +123,7 @@ while($record = mysql_fetch_array($myData)) {
 	 <h6> <?php echo nl2br ("\n Description: ");?></h6><p1>
 	 <?php echo '<input type="hidden" value="'.$record['job_description'].'" id="job_description'.$counter.'" name="job_description'.$counter.'" />';
         echo $record['job_description'];?></p1>
-
+<br>
   <!--Yes and No buttons for each job profile -->
 	<div  class="button-background">
         
@@ -117,11 +135,10 @@ while($record = mysql_fetch_array($myData)) {
 
 	 <?php echo '<input type="image"  src="../Images/tick.png" style="position: absolute; padding-top:0%; bottom:2%;left: 56%; right:5%; width:26%;height:95%;" value="submit" alt="submit" id="yes'.$counter.'" name="yes'.$counter.'" />';?>
 
-        </div></div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><?php
+        </div></div><?php
 
 					  $counter ++;
-        
+}
         ?>
 	
 
@@ -134,8 +151,10 @@ while($record = mysql_fetch_array($myData)) {
 
 <?php
 		
-		}
-if(mysql_fetch_array($myData)!= null) {
+		
+
+    }
+else {
 ?>
 <h5>
 
@@ -149,7 +168,7 @@ echo nl2br ("\n Try adding more skills and hobbies!");
   
   <?php
   }
-  
+
 
 
 ?>

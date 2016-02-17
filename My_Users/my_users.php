@@ -77,7 +77,6 @@ header ("Location: ../Welcome/welcome.php");
 	
 
 	
-//Default (no sort)
 
 
 //Sort levels in ascending order	
@@ -90,15 +89,51 @@ if($_POST['sort_levels'] == 'ascending') {
 
 	while($record = mysql_fetch_array($myData)) {
 	?>
-	<div class="jobBox">
-	
+        
+    <script>
+        //JQUERY Script to make DIV clickable
+        $(".clientBox").click(function() {
+  window.location = $(this).find("form").attr("input"); 
+  return false;
+});
+        
+        </script>
+        
+
+		<div class="clientBox">
+            
+<!-- Form to send variables to next page such as first name and last name -->
+
 	 
 	<hr>
-	<h4> <?php echo $record['first_name'] . " ". $record['last_name']; ?></h4>
-	 <div class="level-number"> <h3> <?php echo $record['level_number']; ?> </h3></div>
+            
+	<h4>  
+        <?php echo $record['first_name'] . " ". $record['last_name']; ?> 
+        
+    </h4> 
+        
+        <div class="level-number">
+         <h3> <?php echo $record['level_number']; ?> </h3></div></div>       <form method="post" action="advisor_chat.php">
+            
+            <!-- submits the client's name to advisor_chat.php -->
+    <input type="hidden" name="clientName" value="<?php echo $record['first_name'] . " ". $record['last_name']?>">
+            
+            <!-- submits the client's username to advisor_chat.php -->
+            <input type="hidden" name="clientUsername" value="<?php echo $record['username']?>">
+            
+            
+    <input type="image" name="submit" src="../Images/chat_2.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:20%; height:11%;" onclick="javascript: form.action='advisor_chat.php';"/>
+        
+        <input type="image" name="submit" src="../Images/chart_bar.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:23%; height:11%;"onclick="javascript: form.action='../Jobs/advisor_jobs.php';"/>
+        
+        <input type="image" name="submit" src="../Images/edit.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:20%; height:10%;"onclick="javascript: form.action='../Jobs/advisor_jobs.php';"/>
+</form>
+  
+            
 	<?php
-	
-		}}
+        
+        
+}}
 //Sort levels in descending order		
 if($_POST['sort_levels'] == 'descending') {
 
@@ -107,16 +142,53 @@ if($_POST['sort_levels'] == 'descending') {
 	$myData = mysql_query($sql, $connection);
 
 
-	while($record = mysql_fetch_array($myData)) {
+while($record = mysql_fetch_array($myData)) {
 	?>
-	<div class="jobBox">
-	
+        
+    <script>
+        //JQUERY Script to make DIV clickable
+        $(".clientBox").click(function() {
+  window.location = $(this).find("form").attr("input"); 
+  return false;
+});
+        
+        </script>
+        
+
+		<div class="clientBox">
+            
+<!-- Form to send variables to next page such as first name and last name -->
+
 	 
 	<hr>
-	<h4> <?php echo $record['first_name'] . " ". $record['last_name']; ?></h4>
-	 <div class="level-number"> <h3> <?php echo $record['level_number']; ?> </h3></div>
+            
+	<h4>  
+        <?php echo $record['first_name'] . " ". $record['last_name']; ?> 
+        
+    </h4> 
+        
+        <div class="level-number">
+         <h3> <?php echo $record['level_number']; ?> </h3></div></div>       <form method="post" action="advisor_chat.php">
+            
+            <!-- submits the client's name to advisor_chat.php -->
+    <input type="hidden" name="clientName" value="<?php echo $record['first_name'] . " ". $record['last_name']?>">
+            
+            <!-- submits the client's username to advisor_chat.php -->
+            <input type="hidden" name="clientUsername" value="<?php echo $record['username']?>">
+            
+            
+    <input type="image" name="submit" src="../Images/chat_2.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:20%; height:11%;" onclick="javascript: form.action='advisor_chat.php';"/>
+        
+        <input type="image" name="submit" src="../Images/chart_bar.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:23%; height:11%;"onclick="javascript: form.action='../Jobs/advisor_jobs.php';"/>
+        
+        <input type="image" name="submit" src="../Images/edit.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:20%; height:10%;"onclick="javascript: form.action='../Jobs/advisor_jobs.php';"/>
+</form>
+  
+            
 	<?php
-	}}
+        
+        
+}}
 	//Sort first names in ascending order		
 if($_POST['sort_names'] == 'firstname') {
 
@@ -127,16 +199,53 @@ if($_POST['sort_names'] == 'firstname') {
 
 	while($record = mysql_fetch_array($myData)) {
 	?>
-	<div class="jobBox">
-	
+        
+    <script>
+        //JQUERY Script to make DIV clickable
+        $(".clientBox").click(function() {
+  window.location = $(this).find("form").attr("input"); 
+  return false;
+});
+        
+        </script>
+        
+
+		<div class="clientBox">
+            
+<!-- Form to send variables to next page such as first name and last name -->
+
 	 
 	<hr>
-	<h4> <?php echo $record['first_name'] . " ". $record['last_name']; ?></h4>
-	 <div class="level-number"> <h3> <?php echo $record['level_number']; ?> </h3></div>
+            
+	<h4>  
+        <?php echo $record['first_name'] . " ". $record['last_name']; ?> 
+        
+    </h4> 
+        
+        <div class="level-number">
+         <h3> <?php echo $record['level_number']; ?> </h3></div></div>       <form method="post" action="advisor_chat.php">
+            
+            <!-- submits the client's name to advisor_chat.php -->
+    <input type="hidden" name="clientName" value="<?php echo $record['first_name'] . " ". $record['last_name']?>">
+            
+            <!-- submits the client's username to advisor_chat.php -->
+            <input type="hidden" name="clientUsername" value="<?php echo $record['username']?>">
+            
+            
+    <input type="image" name="submit" src="../Images/chat_2.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:20%; height:11%;" onclick="javascript: form.action='advisor_chat.php';"/>
+        
+        <input type="image" name="submit" src="../Images/chart_bar.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:23%; height:11%;"onclick="javascript: form.action='../Jobs/advisor_jobs.php';"/>
+        
+        <input type="image" name="submit" src="../Images/edit.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:20%; height:10%;"onclick="javascript: form.action='../Jobs/advisor_jobs.php';"/>
+</form>
+  
+            
 	<?php
-			
+        
+        
 }}
-//Sort surnames in ascending order		
+
+	//Sort surnames names in ascending order		
 if($_POST['sort_names'] == 'surname') {
 
 	$sql = "SELECT * FROM user WHERE advisor_username = '$username'  ORDER BY last_name ASC";
@@ -146,20 +255,114 @@ if($_POST['sort_names'] == 'surname') {
 
 	while($record = mysql_fetch_array($myData)) {
 	?>
-	<div class="jobBox">
-	
+        
+    <script>
+        //JQUERY Script to make DIV clickable
+        $(".clientBox").click(function() {
+  window.location = $(this).find("form").attr("input"); 
+  return false;
+});
+        
+        </script>
+        
+
+		<div class="clientBox">
+            
+<!-- Form to send variables to next page such as first name and last name -->
+
 	 
 	<hr>
-	<h4> <?php echo $record['first_name'] . " ". $record['last_name']; ?></h4>
-	 <div class="level-number"> <h3> <?php echo $record['level_number']; ?> </h3></div>
+            
+	<h4>  
+        <?php echo $record['first_name'] . " ". $record['last_name']; ?> 
+        
+    </h4> 
+        
+        <div class="level-number">
+         <h3> <?php echo $record['level_number']; ?> </h3></div></div>       <form method="post" action="advisor_chat.php">
+            
+            <!-- submits the client's name to advisor_chat.php -->
+    <input type="hidden" name="clientName" value="<?php echo $record['first_name'] . " ". $record['last_name']?>">
+            
+            <!-- submits the client's username to advisor_chat.php -->
+            <input type="hidden" name="clientUsername" value="<?php echo $record['username']?>">
+            
+            
+    <input type="image" name="submit" src="../Images/chat_2.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:20%; height:11%;" onclick="javascript: form.action='advisor_chat.php';"/>
+        
+        <input type="image" name="submit" src="../Images/chart_bar.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:23%; height:11%;"onclick="javascript: form.action='../Jobs/advisor_jobs.php';"/>
+        
+        <input type="image" name="submit" src="../Images/edit.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:20%; height:10%;"onclick="javascript: form.action='../Jobs/advisor_jobs.php';"/>
+</form>
+  
+            
 	<?php
-	}}
+        
+        
+}}
+	//Default (no sort)
+else {
+
+
+	$sql = "SELECT * FROM user WHERE advisor_username = '$username'  ORDER BY first_name ASC";
 	
+	$myData = mysql_query($sql, $connection);
+
+
+	while($record = mysql_fetch_array($myData)) {
+	?>
+        
+    <script>
+        //JQUERY Script to make DIV clickable
+        $(".clientBox").click(function() {
+  window.location = $(this).find("form").attr("input"); 
+  return false;
+});
+        
+        </script>
+        
+
+		<div class="clientBox">
+            
+<!-- Form to send variables to next page such as first name and last name -->
+
+	 
+	<hr>
+            
+	<h4>  
+        <?php echo $record['first_name'] . " ". $record['last_name']; ?> 
+        
+    </h4> 
+        
+        <div class="level-number">
+         <h3> <?php echo $record['level_number']; ?> </h3></div></div>       <form method="post" action="advisor_chat.php">
+            
+            <!-- submits the client's name to advisor_chat.php -->
+    <input type="hidden" name="clientName" value="<?php echo $record['first_name'] . " ". $record['last_name']?>">
+            
+            <!-- submits the client's username to advisor_chat.php -->
+            <input type="hidden" name="clientUsername" value="<?php echo $record['username']?>">
+            
+            
+    <input type="image" name="submit" src="../Images/chat_2.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:20%; height:11%;" onclick="javascript: form.action='advisor_chat.php';"/>
+        
+        <input type="image" name="submit" src="../Images/chart_bar.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:23%; height:11%;"onclick="javascript: form.action='../Jobs/advisor_jobs.php';"/>
+        
+        <input type="image" name="submit" src="../Images/edit.png" border="0" alt="Submit" style="position:relative; top:0; left:3%; width:20%; height:10%;"onclick="javascript: form.action='../Jobs/advisor_jobs.php';"/>
+</form>
+  
+            
+	<?php
+        
+        
+}}
 	mysql_close($connection);
 	
-        
+            
         ?>
         <hr>
+            </div>
+       
         </div>
         </div>
          </div>

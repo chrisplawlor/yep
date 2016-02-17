@@ -30,8 +30,32 @@ $match_category2 = mysql_real_escape_string($_POST['job_category2']);
 $match_description1 = mysql_real_escape_string($_POST['job_description1']);
 $match_description2 = mysql_real_escape_string($_POST['job_description2']);
 
+$job_id1 = mysql_real_escape_string($_POST['job_id1']);
+$job_id2 = mysql_real_escape_string($_POST['job_id2']);
 
 if(isset($_POST['yes1']))
+ {
+ 
+    $sql = mysql_query("INSERT  INTO `job_matches` (`matched_title`, `matched_type`, `matched_location`, `matched_salary`, `matched_category`, `matched_description`, `matched_username`, `job_id_fk`) 
+				VALUES ('{$match_title1}', '{$match_type1}', '{$match_location1}', '{$match_salary1}', '{$match_category1}', '{$match_description1}', '{$username}', '{$job_id1}')");
+			 $result = mysql_query($sql);
+	
+$result="mysql_query($sql) or die (mysql_error())";
+        
+    }
+    if(isset($_POST['yes2'])) {
+
+
+    $sql = mysql_query("INSERT  INTO `job_matches` (`matched_title`, `matched_type`, `matched_location`, `matched_salary`, `matched_category`, `matched_description`, `matched_username`, `job_id_fk`) 
+				VALUES ('{$match_title2}', '{$match_type2}', '{$match_location2}', '{$match_salary2}', '{$match_category2}', '{$match_description2}', '{$username}', '{$job_id2}')");
+			 $result = mysql_query($sql);
+	
+$result="mysql_query($sql) or die (mysql_error())";
+        
+    
+}
+
+if(isset($_POST['no1']))
  {
  
     $sql = mysql_query("INSERT  INTO `job_matches` (`matched_title`, `matched_type`, `matched_location`, `matched_salary`, `matched_category`, `matched_description`, `matched_username`) 
@@ -41,15 +65,4 @@ if(isset($_POST['yes1']))
 $result="mysql_query($sql) or die (mysql_error())";
         
     }
-    if(isset($_POST['yes2'])) {
-
-
-    $sql = mysql_query("INSERT  INTO `job_matches` (`matched_title`, `matched_type`, `matched_location`, `matched_salary`, `matched_category`, `matched_description`, `matched_username`) 
-				VALUES ('{$match_title2}', '{$match_type2}', '{$match_location2}', '{$match_salary2}', '{$match_category2}', '{$match_description2}', '{$username}')");
-			 $result = mysql_query($sql);
-	
-$result="mysql_query($sql) or die (mysql_error())";
-        
-    
-}
 ?>
